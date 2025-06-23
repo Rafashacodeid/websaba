@@ -3,62 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lomba 17 Agustus 2025 - Rayakan Kemerdekaan dengan Semangat dan Kegembiraan!">
-  <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20240730/ourmid/pngtree-official-logo-for-indonesias-80th-independence-day-2024-vector-png-image_13263920.png" type="image/x-icon"/>
-  <title>Lomba 17 Agustus 2025</title>
+  <title>Daftar Peserta Lomba 17 Agustus 2025</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <style>
-    :root {
-      --primary-red: #dc2626;
-      --dark-red: #b91c1c;
-      --text-dark: #1f2937;
-    }
-
     body {
-      background: linear-gradient(135deg, var(--dark-red), var(--primary-red), #ffffff, var(--primary-red), var(--dark-red));
-      color: var(--text-dark);
+      background: linear-gradient(135deg, #b91c1c, #dc2626, #ffffff, #dc2626, #b91c1c);
+      color: #1f2937;
       font-family: 'Inter', sans-serif;
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
     }
-
-    .hero-section {
-      background: url('https://source.unsplash.com/random/1920x1080/?indonesia,flag') no-repeat center center/cover;
-      position: relative;
-      color: white;
-      padding: 4rem 1rem;
-    }
-
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
     .card {
       background: rgba(255, 255, 255, 0.95);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 0.5rem;
+      transition: box-shadow 0.3s ease;
     }
-
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
-
     .btn-container {
         display: flex;
         flex-wrap: wrap;
@@ -108,7 +69,6 @@
             align-items: center;
         }
     }
-
     #particles-js {
       position: fixed;
       width: 100%;
@@ -116,143 +76,84 @@
       top: 0;
       left: 0;
       z-index: -1;
-      pointer-events: none;
     }
-
-    @media (max-width: 640px) {
-      .hero-section {
-        padding: 3rem 1rem;
-      }
-
-      .hero-section h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero-section p {
-        font-size: 1.125rem;
-      }
-
-      .hero-section .btn-primary,
-      .hero-section .btn-secondary {
-        display: block;
-        margin: 0.5rem auto;
-        width: fit-content;
-      }
+    table tr {
+      transition: background 0.2s ease;
+    }
+    table tbody tr:hover {
+      background: #f3f4f6;
+    }
+    input:focus, select:focus {
+      outline: none;
+      ring: 2px solid #dc2626;
     }
   </style>
 </head>
 <body>
-  <!-- Particles Background -->
   <div id="particles-js"></div>
-
-  <!-- Hero Section -->
-  <section class="hero-section flex items-center justify-center">
-    <div class="hero-content container mx-auto px-4 text-center" data-aos="fade-up">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Lomba 17 Agustus 2025</h1>
-      <p class="text-lg sm:text-xl mb-6">Rayakan Kemerdekaan dengan Semangat dan Kegembiraan!</p>
-      <div id="countdown" class="text-xl sm:text-2xl font-semibold mb-6"></div>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#kategori" class="btn-primary">Lihat Lomba</a>
-        <a href="#pendaftaran" class="btn-secondary">Daftar Sekarang</a>
-        <a href="peserta.html" class="btn-primary">Lihat Peserta</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Kategori Lomba -->
-  <section id="kategori" class="py-12 sm:py-16 bg-gray-100">
+  <header class="py-16 text-center bg-gray-100" data-aos="fade-up">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12" data-aos="fade-up">Kategori & Jenis Lomba</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="card p-6" data-aos="fade-right">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-red-600">Anak-anak</h3>
-          <ul class="list-disc pl-5 text-gray-700 text-sm sm:text-base">
-            <li>Gigit Koin (Pepaya + Koin + Coklat)</li>
-            <li>Lomba Kerupuk</li>
-            <li>Pindah Bendera</li>
-            <li>Sendok Gundu</li>
-            <li>Move Fish</li>
-            <li>Estafet Kardus</li>
-            <li>Oreo/Regal</li>
-          </ul>
-        </div>
-        <div class="card p-6" data-aos="fade-right" data-aos-delay="100">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-red-600">Ibu-ibu</h3>
-          <ul class="list-disc pl-5 text-gray-700 text-sm sm:text-base">
-            <li>Pecah Balon (Mata Tertutup)</li>
-            <li>Ambil Karet di Tepung</li>
-            <li>Lomba Kerupuk</li>
-          </ul>
-        </div>
-        <div class="card p-6" data-aos="fade-left" data-aos-delay="200">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-red-600">Bapak-bapak</h3>
-          <ul class="list-disc pl-5 text-gray-700 text-sm sm:text-base">
-            <li>Estafet Sarung (1 Tim 4-5 Orang)</li>
-            <li>Gaplek</li>
-            <li>Remi</li>
-            <li>Lomba Kerupuk</li>
-          </ul>
-        </div>
-        <div class="card p-6" data-aos="fade-left" data-aos-delay="300">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-red-600">Pasangan</h3>
-          <ul class="list-disc pl-5 text-gray-700 text-sm sm:text-base">
-            <li>Make Up (Mata Tertutup)</li>
-            <li>Suap Pisang</li>
-            <li>Lomba Karaoke</li>
-          </ul>
-        </div>
-      </div>
+      <h1 class="text-4xl font-extrabold text-red-600">Daftar Peserta Lomba 17 Agustus 2025</h1>
+      <p class="text-lg text-gray-700 mt-2">Lihat daftar peserta yang telah terdaftar untuk berbagai kategori lomba.</p>
     </div>
-  </section>
-
-  <!-- Pendaftaran -->
-  <section id="pendaftaran" class="py-12 sm:py-16">
+  </header>
+  <section class="py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12" data-aos="fade-up">Formulir Pendaftaran</h2>
-      <div class="max-w-lg mx-auto card p-6 sm:p-8" data-aos="zoom-in">
-        <div id="formPendaftaran">
-          <div class="mb-4">
-            <label class="block text-gray-700 font-semibold mb-2" for="nama">Nama Lengkap</label>
-            <input type="text" id="nama" name="nama" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
+      <div class="card p-8 rounded-lg shadow-lg" data-aos="zoom-in">
+        <div class="flex flex-col md:flex-row gap-4 mb-6">
+          <div class="flex-1">
+            <label class="block text-gray-700 font-semibold mb-2">Cari Nama Peserta</label>
+            <input id="searchInput" type="text" placeholder="Masukkan nama..." class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600" aria-label="Cari nama peserta">
           </div>
-          <div class="mb-4">
-            <label class="block text-gray-700 font-semibold mb-2" for="nohp">No HP / WA</label>
-            <input type="tel" id="nohp" name="nohp" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required pattern="[0-9]{10,13}">
-          </div>
-          <div class="mb-4">
-            <label class="block text-gray-700 font-semibold mb-2" for="kategori">Kategori</label>
-            <select id="kategori" name="kategori" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
-              <option value="">-- Pilih --</option>
-              <option>Anak-anak</option>
-              <option>Ibu-ibu</option>
-              <option>Bapak-bapak</option>
-              <option>Pasangan</option>
+          <div class="flex-1">
+            <label class="block text-gray-700 font-semibold mb-2">Filter Kategori</label>
+            <select id="categoryFilter" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600" aria-label="Filter kategori">
+              <option value="all">Semua Kategori</option>
+              <option value="Anak-anak">Anak-anak</option>
+              <option value="Ibu-ibu">Ibu-ibu</option>
+              <option value="Bapak-bapak">Bapak-bapak</option>
+              <option value="Pasangan">Pasangan</option>
             </select>
           </div>
-          <div class="mb-4">
-            <label class="block text-gray-700 font-semibold mb-2" for="lomba">Jenis Lomba</label>
-            <input type="text" id="lomba" name="lomba" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
+          <div class="flex items-end">
+            <button id="refreshBtn" class="btn-primary text-white px-6 py-2 rounded-lg" aria-label="Refresh data">Refresh</button>
           </div>
-          <button type="submit" class="btn-primary w-full">Kirim Pendaftaran</button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full table-auto border-collapse" aria-label="Tabel daftar peserta">
+            <thead>
+              <tr class="bg-red-600 text-white">
+                <th class="px-4 py-3 text-left">No</th>
+                <th class="px-4 py-3 text-left">Nama</th>
+                <th class="px-4 py-3 text-left">No HP</th>
+                <th class="px-4 py-3 text-left">Kategori</th>
+                <th class="px-4 py-3 text-left">Lomba</th>
+              </tr>
+            </thead>
+            <tbody id="participantTable">
+              <tr>
+                <td class="px-4 py-3 border-t">1</td>
+                <td class="px-4 py-3 border-t">Contoh Peserta</td>
+                <td class="px-4 py-3 border-t">08123456789</td>
+                <td class="px-4 py-3 border-t">Anak-anak</td>
+                <td class="px-4 py-3 border-t">Lomba Kerupuk</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Modal Konfirmasi -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-    <div class="bg-white p-6 sm:p-8 rounded-lg max-w-md w-full text-center">
-      <h3 class="text-xl sm:text-2xl font-bold text-green-600 mb-4">Pendaftaran Berhasil!</h3>
-      <p class="text-gray-700 mb-6 text-sm sm:text-base">Terima kasih telah melakukan pendaftaran. Informasi Anda akan segera diproses dan dimasukkan ke dalam daftar oleh admin. Mohon menunggu dengan sabar apabila nama Anda belum tercantum.</p>
-      <button id="closeModal" class="btn-primary">Tutup</button>
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg max-w-md w-full text-center">
+      <h3 class="text-2xl font-bold text-green-600 mb-4">Data Diperbarui!</h3>
+      <p class="text-gray-700 mb-6">Daftar peserta telah diperbarui. Mohon maaf apabila nama Anda belum tercantum, karena proses pengisian daftar ini masih dilakukan secara manual oleh admin.</p>
+      <button id="closeModal" class="btn-primary text-white px-6 py-2 rounded-lg">Tutup</button>
     </div>
   </div>
-
-  <!-- Footer -->
   <footer class="py-6 bg-gray-900 text-white text-center">
-    <p class="text-sm sm:text-base">© 2025 Panitia 17 Agustus Graha Saba | Design by Rafasha Alfiandi.P</p>
+    <p>© 2025 Lomba 17 Agustus. All Rights Reserved.</p>
   </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, once: true });
@@ -262,66 +163,79 @@
         number: { value: 60, density: { enable: true, value_area: 1000 } },
         color: { value: ['#dc2626', '#ffffff'] },
         shape: { type: 'circle' },
-        opacity: { value: 0.5, random: true },
+        opacity: { value: 0.4, random: true },
         size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.3, width: 1 },
-        move: { enable: true, speed: 4, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+        line_linked: { enable: true, distance: 120, color: '#ffffff', opacity: 0.3, width: 1 },
+        move: { enable: true, speed: 4, direction: 'none', random: true, straight: false, out_mode: 'out' }
       },
       interactivity: {
         detect_on: 'canvas',
         events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
-        modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+        modes: { repulse: { distance: 80, duration: 0.4 }, push: { particles_nb: 3 } }
       },
       retina_detect: true
     });
 
-    // Countdown Timer
-    const eventDate = new Date('August 17, 2025 08:00:00');
-    const countdown = document.getElementById('countdown');
-    function updateCountdown() {
-      const now = new Date();
-      const distance = eventDate - now;
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      countdown.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
-      if (distance < 0) {
-        countdown.innerHTML = 'Acara Telah Dimulai!';
-      }
-    }
-    setInterval(updateCountdown, 1000);
+    const participants = [
+      { id: 1, nama: 'anonim', nohp: '08123456789', kategori: 'Anak-anak', lomba: 'Lomba Kerupuk' },
+    ];
 
-    // Form Submission
-    const TOKEN = '7990557243:AAE4YiElAfZQ1sDdGg-RvCJHbvv0pKYk0h8';
-    const CHAT_ID = '6385648443';
-    const form = document.getElementById('formPendaftaran');
+    function renderTable(data) {
+      const tbody = document.getElementById('participantTable');
+      tbody.innerHTML = '';
+      data.forEach((item, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td class="px-4 py-3 border-t">${index + 1}</td>
+          <td class="px-4 py-3 border-t">${item.nama}</td>
+          <td class="px-4 py-3 border-t">${item.nohp}</td>
+          <td class="px-4 py-3 border-t">${item.kategori}</td>
+          <td class="px-4 py-3 border-t">${item.lomba}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+    renderTable(participants);
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+
+    function filterData() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const category = categoryFilter.value;
+      let filtered = participants;
+
+      if (searchTerm) {
+        filtered = filtered.filter(item => item.nama.toLowerCase().includes(searchTerm));
+      }
+
+      if (category !== 'all') {
+        filtered = filtered.filter(item => item.kategori === category);
+      }
+
+      renderTable(filtered);
+    }
+
+    searchInput.addEventListener('input', filterData);
+    categoryFilter.addEventListener('change', filterData);
+    const refreshBtn = document.getElementById('refreshBtn');
     const modal = document.getElementById('modal');
     const closeModal = document.getElementById('closeModal');
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      let text = `📌 *Pendaftaran Lomba 17 Agustus*%0A`;
-      formData.forEach((value, key) => {
-        text += `*${key.charAt(0).toUpperCase() + key.slice(1)}*: ${value}%0A`;
-      });
-
-      try {
-        const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}&parse_mode=Markdown`);
-        if (response.ok) {
-          modal.classList.remove('hidden');
-          form.reset();
-        } else {
-          alert('Gagal mengirim pendaftaran. Silakan coba lagi.');
-        }
-      } catch (err) {
-        alert('Terjadi kesalahan: ' + err.message);
-      }
+    refreshBtn.addEventListener('click', () => {
+      renderTable(participants);
+      searchInput.value = '';
+      categoryFilter.value = 'all';
+      modal.classList.remove('hidden');
     });
 
     closeModal.addEventListener('click', () => {
       modal.classList.add('hidden');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+      }
     });
   </script>
 </body>
