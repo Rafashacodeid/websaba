@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20240730/ourmid/pngtree-official-logo-for-indonesias-80th-independence-day-2024-vector-png-image_13263920.png" type="image/x-icon"/>
-  <title>Pendaftaran Lomba 17 Agustus 2025</title>
+  <title>Pendaftaraa Lomba 17 Agustus 2025</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
@@ -37,52 +37,13 @@
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
-    .btn-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-    }
-
     .btn-primary {
-        background: var(--primary-red);
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 9999px;
-        transition: background-color 0.3s ease;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-block;
-        text-align: center;
-        min-width: 150px;
+      background: #dc2626;
+      border: none;
+      transition: background 0.3s;
     }
-
     .btn-primary:hover {
-        background: var(--dark-red);
-    }
-
-    .btn-secondary {
-        background: white;
-        color: var(--primary-red);
-        padding: 0.75rem 1.5rem;
-        border-radius: 9999px;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-block;
-        text-align: center;
-        min-width: 150px;
-    }
-
-    .btn-secondary:hover {
-        background: var(--primary-red);
-        color: white;
-    }
-    @media (max-width: 600px) {
-        .btn-container {
-            flex-direction: column;
-            align-items: center;
-        }
+      background: #b91c1c;
     }
     #particles-js {
       position: fixed;
@@ -182,11 +143,10 @@
       </div>
     </div>
   </section>
-
   <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
     <div class="bg-white p-8 rounded-lg max-w-md w-full text-center">
       <h3 class="text-2xl font-bold text-green-600 mb-4">Pendaftaran Berhasil!</h3>
-      <p class="text-gray-700 mb-6">Terima kasih telah melakukan pendaftaran. Informasi Anda akan segera diproses dan dimasukkan ke dalam daftar oleh admin. Mohon menunggu dengan sabar apabila nama Anda belum tercantum.</p>
+      <p class="text-gray-700 mb-6">erima kasih telah melakukan pendaftaran. Informasi Anda akan segera diproses dan dimasukkan ke dalam daftar oleh admin. Mohon menunggu dengan sabar apabila nama Anda belum tercantum.</p>
       <button id="closeModal" class="btn-primary text-white px-6 py-2 rounded-lg">Tutup</button>
     </div>
   </div>
@@ -213,6 +173,8 @@
       },
       retina_detect: true
     });
+
+    // Countdown Timer
     const eventDate = new Date('August 17, 2025 08:00:00');
     const countdown = document.getElementById('countdown');
     function updateCountdown() {
