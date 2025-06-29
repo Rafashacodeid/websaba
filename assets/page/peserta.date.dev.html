@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daftar Peserta Lomba 17 Agustus 2025 - Lihat daftar peserta yang telah terdaftar untuk berbagai kategori lomba.">
+  <meta name="keywords" content="Lomba 17 Agustus, Daftar Peserta, Kemerdekaan Indonesia, 17 Agustus 2025">
+  <meta name="author" content="Panitia 17 Agustus Graha Saba">
+  <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20240730/ourmid/pngtree-official-logo-for-indonesias-80th-independence-day-2024-vector-png-image_13263920.png" type="image/x-icon"/>
+  <title>Daftar Peserta Lomba 17 Agustus 2025</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #b91c1c, #dc2626, #ffffff, #dc2626, #b91c1c);
+      color: #1f2937;
+      position: relative;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      backdrop-filter: blur(10px);
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+    .btn-primary {
+      background: #dc2626;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: 0.5s;
+    }
+    .btn-primary:hover::after {
+      left: 100%;
+    }
+    .btn-primary:hover {
+      background: #b91c1c;
+      transform: scale(1.05);
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+    table tr {
+      transition: background 0.3s ease;
+    }
+    table tbody tr:hover {
+      background: #f3f4f6;
+    }
+    .form-input, .form-select {
+      transition: all 0.3s ease;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 0.75rem;
+    }
+    .form-input:focus, .form-select:focus {
+      border-color: #dc2626;
+      box-shadow: 0 0 8px rgba(220, 38, 38, 0.3);
+      outline: none;
+    }
+    header {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('https://source.unsplash.com/random/1920x1080/?indonesia,flag') no-repeat center center/cover;
+      color: white;
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    header > * {
+      position: relative;
+      z-index: 2;
+    }
+    footer a {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    footer a:hover {
+      color: #ff6b6b;
+      transform: translateY(-2px);
+    }
+    @media (max-width: 640px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .card {
+        padding: 1rem;
+      }
+      .btn-primary {
+        padding: 0.5rem 1rem;
+      }
+      table th, table td {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+      }
+      .form-input, .form-select {
+        font-size: 0.9rem;
+      }
+    }
+    @media (min-width: 641px) and (max-width: 1024px) {
+      header h1 {
+        font-size: 3.5rem;
+      }
+      table th, table td {
+        font-size: 0.9rem;
+      }
+    }
+    @media (min-width: 1025px) {
+      header h1 {
+        font-size: 4.5rem;
+      }
+      table th, table td {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header class="py-20 text-center" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">Daftar Peserta Lomba 17 Agustus 2025</h1>
+      <p class="text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto">Lihat daftar peserta yang telah terdaftar untuk merayakan kemerdekaan dengan semangat dan keceriaan!</p>
+    </div>
+  </header>
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="card p-6 md:p-10 rounded-xl shadow-xl" data-aos="zoom-in">
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
+          <div class="flex-1">
+            <label class="block text-gray-700 font-semibold mb-2">Cari Nama Peserta</label>
+            <input id="searchInput" type="text" placeholder="Masukkan nama..." class="form-input w-full px-4 py-3" aria-label="Cari nama peserta">
+          </div>
+          <div class="flex-1">
+            <label class="block text-gray-700 font-semibold mb-2">Filter Kategori</label>
+            <select id="categoryFilter" class="form-select w-full px-4 py-3" aria-label="Filter kategori">
+              <option value="all">Semua Kategori</option>
+              <option value="Anak-anak">Anak-anak</option>
+              <option value="Ibu-ibu">Ibu-ibu</option>
+              <option value="Bapak-bapak">Bapak-bapak</option>
+              <option value="Pasangan">Pasangan</option>
+            </select>
+          </div>
+          <div class="flex items-end">
+            <button id="refreshBtn" class="btn-primary text-white px-6 py-3 text-lg font-semibold" aria-label="Refresh data">Refresh</button>
+          </div>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full table-auto border-collapse" aria-label="Tabel daftar peserta">
+            <thead>
+              <tr class="bg-red-600 text-white">
+                <th class="px-4 py-3 text-left font-semibold">No</th>
+                <th class="px-4 py-3 text-left font-semibold">Nama</th>
+                <th class="px-4 py-3 text-left font-semibold">Blok/No</th>
+                <th class="px-4 py-3 text-left font-semibold">No HP</th>
+                <th class="px-4 py-3 text-left font-semibold">Kategori</th>
+                <th class="px-4 py-3 text-left font-semibold">Lomba</th>
+              </tr>
+            </thead>
+            <tbody id="participantTable">
+              <tr>
+                <td class="px-4 py-3 border-t">1</td>
+                <td class="px-4 py-3 border-t">Contoh Peserta</td>
+                <td class="px-4 py-3 border-t">08123456789</td>
+                <td class="px-4 py-3 border-t">Anak-anak</td>
+                <td class="px-4 py-3 border-t">Lomba Kerupuk</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center" data-aos="zoom-in">
+    <div class="bg-white p-8 md:p-10 rounded-xl max-w-md w-full text-center shadow-2xl">
+      <h3 class="text-3xl font-bold text-green-600 mb-6">Data Diperbarui!</h3>
+      <p class="text-gray-700 mb-8 text-lg">Daftar peserta telah diperbarui. Mohon menunggu jika nama Anda belum tercantum, karena proses ini dilakukan secara manual oleh panitia.</p>
+      <button id="closeModal" class="btn-primary text-white text-lg font-semibold">Tutup</button>
+    </div>
+  </div>
+  <div id="popup-iklan" class="popup-overlay">
+  <div class="popup-content">
+    <button class="close-btn" aria-label="Close popup" onclick="tutupPopup()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <a href="https://rafashaalfian.my.id" target="_blank" class="popup-link">
+      <img src="https://rafashaalfian.my.id/LIT.jpg" alt="Iklan Kamu" class="popup-img">
+    </a>
+  </div>
+</div>
+
+<style>
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.3s ease;
+  }
+
+  .popup-content {
+    position: relative;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 16px;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    z-index: 10001; 
+  }
+
+  .popup-overlay.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .popup-overlay.active .popup-content {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .popup-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .popup-link:hover .popup-img {
+    transform: scale(1.02);
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    color: red;
+    z-index: 10002; 
+  }
+
+  .close-btn svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  @media (max-width: 640px) {
+    .popup-content {
+      padding: 1rem;
+      max-width: 90%;
+    }
+  }
+</style>
+
+
+<script>
+  window.onload = function() {
+    setTimeout(function() {
+      const popup = document.getElementById('popup-iklan');
+      popup.style.display = 'flex';
+      setTimeout(() => popup.classList.add('active'), 10);
+    }, 3000);
+  };
+
+  function tutupPopup() {
+    const popup = document.getElementById('popup-iklan');
+    popup.classList.remove('active');
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 300);
+  }
+</script>
+  <footer class="py-8 bg-gradient-to-r from-red-800 via-gray-900 to-red-800 text-white text-center">
+    <div class="container mx-auto px-4">
+      <p class="text-sm md:text-base font-semibold">© 2025 <span class="text-red-300">Panitia 17 Agustus Graha Saba</span>. All Rights Reserved.</p>
+      <div class="mt-4 flex flex-wrap justify-center gap-6">
+        <a href="index.html" class="hover:text-red-400 transition">Beranda</a>
+        <a href="index.html#sejarah" class="hover:text-red-400 transition">Sejarah</a>
+        <a href="index.html#kategori" class="hover:text-red-400 transition">Kategori</a>
+        <a href="index.html#pendaftaran" class="hover:text-red-400 transition">Pendaftaran</a>
+        <a href="#" class="hover:text-red-400 transition">Peserta</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1200, once: true });
+
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: ['#dc2626', '#ffffff', '#b91c1c'] },
+        shape: { type: 'circle', stroke: { width: 0 } },
+        opacity: { value: 0.6, random: true },
+        size: { value: 4, random: true },
+        line_linked: { enable: true, distance: 120, color: '#ffffff', opacity: 0.3, width: 1.5 },
+        move: { enable: true, speed: 4, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' }, resize: true },
+        modes: { grab: { distance: 140, line_linked: { opacity: 0.7 } }, push: { particles_nb: 4 } }
+      },
+      retina_detect: true
+    });
+
+    const participants = [
+      { id: 1, nama: 'Dian Passage', blokno: 'A1 No 10', nohp: '081911994353', kategori: 'Bapak-bapak', lomba: 'Remi' },
+      { id: 2, nama: 'Siti Aisyah', blokno: 'B2 No 7', nohp: '082211223344', kategori: 'Ibu-ibu', lomba: 'Balap Karung' }
+
+    ];
+
+    function renderTable(data) {
+  const tbody = document.getElementById('participantTable');
+  tbody.innerHTML = '';
+  data.forEach((item, index) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td class="px-4 py-3 border-t">${index + 1}</td>
+      <td class="px-4 py-3 border-t">${item.nama}</td>
+      <td class="px-4 py-3 border-t">${item.blokno || '-'}</td>
+      <td class="px-4 py-3 border-t">${item.nohp}</td>
+      <td class="px-4 py-3 border-t">${item.kategori}</td>
+      <td class="px-4 py-3 border-t">${item.lomba}</td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+
+    renderTable(participants);
+
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+
+    function filterData() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const category = categoryFilter.value;
+      let filtered = participants;
+
+      if (searchTerm) {
+        filtered = filtered.filter(item => item.nama.toLowerCase().includes(searchTerm));
+      }
+
+      if (category !== 'all') {
+        filtered = filtered.filter(item => item.kategori === category);
+      }
+
+      renderTable(filtered);
+    }
+
+    searchInput.addEventListener('input', filterData);
+    categoryFilter.addEventListener('change', filterData);
+
+    const refreshBtn = document.getElementById('refreshBtn');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+
+    refreshBtn.addEventListener('click', () => {
+      renderTable(participants);
+      searchInput.value = '';
+      categoryFilter.value = 'all';
+      modal.classList.remove('hidden');
+      gsap.fromTo(modal.querySelector('div'), 
+        { scale: 0.8, opacity: 0 }, 
+        { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.7)' }
+      );
+    });
+
+    closeModal.addEventListener('click', () => {
+      gsap.to(modal.querySelector('div'), {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.3,
+        ease: 'back.in(1.7)',
+        onComplete: () => modal.classList.add('hidden')
+      });
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        gsap.to(modal.querySelector('div'), {
+          scale: 0.8,
+          opacity: 0,
+          duration: 0.3,
+          ease: 'back.in(1.7)',
+          onComplete: () => modal.classList.add('hidden')
+        });
+      }
+    });
+
+    gsap.to('header h1', {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: 'power3.out',
+      delay: 0.5
+    });
+    gsap.to('header p', {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: 'power3.out',
+      delay: 0.7
+    });
+  </script>
+</body>
+</html>
