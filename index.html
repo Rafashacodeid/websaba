@@ -276,176 +276,6 @@
       opacity: 0.3;
     }
     
-    /* Collapsible styles */
-    .collapsible {
-      background-color: #f8fafc;
-      color: #1f2937;
-      cursor: pointer;
-      padding: 1rem;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 0.5rem;
-      margin-bottom: 0.5rem;
-      transition: all 0.3s ease;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-    
-    .collapsible:hover {
-      background-color: #f1f5f9;
-    }
-    
-    .collapsible:after {
-      content: '\002B';
-      font-weight: bold;
-      float: right;
-      margin-left: 5px;
-      transition: transform 0.3s ease;
-    }
-    
-    .active:after {
-      content: '\2212';
-      transform: rotate(180deg);
-    }
-    
-    .collapsible-content {
-      padding: 0 1rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-      background-color: white;
-      border-radius: 0 0 0.5rem 0.5rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Timeline styles */
-    .timeline {
-      position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .timeline::after {
-      content: '';
-      position: absolute;
-      width: 2px;
-      background-color: #e5e7eb;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      margin-left: -1px;
-    }
-    
-    .timeline-container {
-      padding: 10px 40px;
-      position: relative;
-      background-color: inherit;
-      width: 50%;
-    }
-    
-    .timeline-container::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      right: -10px;
-      background-color: white;
-      border: 4px solid var(--primary-color);
-      top: 15px;
-      border-radius: 50%;
-      z-index: 1;
-    }
-    
-    .left {
-      left: 0;
-    }
-    
-    .right {
-      left: 50%;
-    }
-    
-    .left::before {
-      content: " ";
-      height: 0;
-      position: absolute;
-      top: 22px;
-      width: 0;
-      z-index: 1;
-      right: 30px;
-      border: medium solid #e5e7eb;
-      border-width: 10px 0 10px 10px;
-      border-color: transparent transparent transparent #e5e7eb;
-    }
-    
-    .right::before {
-      content: " ";
-      height: 0;
-      position: absolute;
-      top: 22px;
-      width: 0;
-      z-index: 1;
-      left: 30px;
-      border: medium solid #e5e7eb;
-      border-width: 10px 10px 10px 0;
-      border-color: transparent #e5e7eb transparent transparent;
-    }
-    
-    .right::after {
-      left: -10px;
-    }
-    
-    .timeline-content {
-      padding: 20px 30px;
-      background-color: white;
-      position: relative;
-      border-radius: 6px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    @media screen and (max-width: 768px) {
-      .timeline::after {
-        left: 31px;
-      }
-      
-      .timeline-container {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-      }
-      
-      .timeline-container::before {
-        left: 60px;
-        border: medium solid #e5e7eb;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent #e5e7eb transparent transparent;
-      }
-      
-      .left::after, .right::after {
-        left: 21px;
-      }
-      
-      .right {
-        left: 0%;
-      }
-    }
-    
-    /* Flayer section */
-    .flayer-section {
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
-      text-align: center;
-      border: 1px dashed var(--primary-color);
-    }
-    
     @media (max-width: 640px) {
       .hero-section h1 { font-size: 2.5rem; }
       .hero-section p { font-size: 1.1rem; }
@@ -517,6 +347,71 @@
         display: block;
       }
     }
+
+    /* Collapsible styles */
+    .collapsible {
+      background-color: #f8f9fa;
+      color: #333;
+      cursor: pointer;
+      padding: 1rem;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .collapsible:hover {
+      background-color: #e9ecef;
+    }
+
+    .collapsible:after {
+      content: '+';
+      font-size: 1.2rem;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .collapsible.active:after {
+      content: '-';
+    }
+
+    .collapsible-content {
+      padding: 0 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: #f8f9fa;
+      border-radius: 0 0 8px 8px;
+      margin-bottom: 1rem;
+    }
+
+    /* Flyer section */
+    .flyer-container {
+      margin: 2rem 0;
+      border: 2px dashed #dc2626;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      background-color: rgba(220, 38, 38, 0.05);
+    }
+
+    .flyer-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
   </style>
   <body>
     <audio id="bg-music" loop class="autoplay-music">
@@ -577,224 +472,386 @@
           </div>
         </div>
       </section>
-      
-      <!-- Flayer Section -->
-      <section class="container mx-auto px-4 py-8">
-        <div class="flayer-section" data-aos="fade-up">
-          <h2 class="text-2xl font-bold mb-4 text-red-600">Undangan & Informasi</h2>
-          <p class="mb-4">Download flayer acara untuk informasi lengkap:</p>
-          <a href="#" class="btn-primary inline-block">Download Flayer</a>
-        </div>
-      </section>
-
-      <!-- Sabtu 16 Aug 2025 Section -->
-      <section class="py-8 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Sabtu, 16 Agustus 2025</h2>
-          <div class="max-w-3xl mx-auto">
-            <div class="card p-6 glass-effect" data-aos="fade-up" data-aos-delay="100">
-              <div class="flex items-center mb-4">
-                <div class="w-4 h-4 bg-red-600 rounded-full mr-3"></div>
-                <h3 class="text-xl font-semibold">Bapak-bapak Main Bola Dasteran</h3>
-              </div>
-              <p class="text-gray-700 ml-7">Ba'da Ashar</p>
-              
-              <div class="flex items-center mt-6 mb-4">
-                <div class="w-4 h-4 bg-red-600 rounded-full mr-3"></div>
-                <h3 class="text-xl font-semibold">Penyisihan dan Final Gaplek & Remi</h3>
-              </div>
-              <p class="text-gray-700 ml-7">Ba'da Maghrib</p>
+      <section id="sejarah" class="py-16 sm:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-800"
+            data-aos="fade-up"
+          >
+            Mengapa Kita Merayakan Kemerdekaan?
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div
+              class="card p-6 sm:p-8 rounded-xl glass-effect hover-scale"
+              data-aos="fade-right"
+            >
+              <h3
+                class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-5 text-red-600"
+              >
+                Makna Kemerdekaan
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                Hari Kemerdekaan Indonesia, yang diperingati setiap tanggal 17
+                Agustus, adalah momen bersejarah untuk mengenang perjuangan para
+                pahlawan yang telah berkorban demi kebebasan bangsa. Merayakan
+                kemerdekaan berarti menghargai nilai-nilai persatuan,
+                keberanian, dan semangat pantang menyerah yang telah membawa
+                Indonesia menuju kemerdekaan pada tahun 1945. Perayaan ini juga
+                menjadi ajang untuk mempererat kebersamaan, memupuk rasa
+                nasionalisme, dan menginspirasi generasi muda untuk terus
+                menjaga dan membangun bangsa.
+              </p>
+            </div>
+            <div
+              class="card p-6 sm:p-8 rounded-xl glass-effect hover-scale"
+              data-aos="fade-left"
+            >
+              <h3
+                class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-5 text-red-600"
+              >
+                Sekilas Sejarah
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                Indonesia memproklamasikan kemerdekaannya pada 17 Agustus 1945
+                di Jakarta, dipimpin oleh Soekarno dan Mohammad Hatta atas nama
+                bangsa Indonesia. Proklamasi ini menandai akhir dari penjajahan
+                Belanda dan Jepang setelah ratusan tahun. Perjuangan kemerdekaan
+                melibatkan berbagai lapisan masyarakat, dari pertempuran
+                bersenjata hingga diplomasi, yang menunjukkan semangat juang dan
+                persatuan yang luar biasa. Hari ini, kita merayakan perjuangan
+                tersebut melalui berbagai kegiatan, termasuk lomba-lomba
+                tradisional yang mencerminkan kebersamaan dan keceriaan.
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="history-image" data-aos="fade-up" data-aos-delay="100">
+              <img
+                src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1610415681/wkqahc8cje4cxbxhegwz.jpg"
+                alt="Perjuangan Kemerdekaan"
+                loading="lazy"
+              />
+            </div>
+            <div class="history-image" data-aos="fade-up" data-aos-delay="200">
+              <img
+                src="https://elshinta.com/asset/upload/article/2023/agustus/4783_ELSHINTADOTCOM_20230816_post-image-1597657027668.jpg"
+                alt="Proklamasi Kemerdekaan"
+                loading="lazy"
+              />
+            </div>
+            <div class="history-image" data-aos="fade-up" data-aos-delay="300">
+              <img
+                src="https://rumahmillennials.com/wp-content/uploads/2021/08/Foto-1.jpg"
+                alt="Teks Proklamasi"
+                loading="lazy"
+              />
+            </div>
+            <div class="history-image" data-aos="fade-up" data-aos-delay="100">
+              <img
+                src="http://sman1tbtlampung.sch.id/media_library/posts/post-image-1597657039324.jpg"
+                alt="Detik-detik Proklamasi"
+                loading="lazy"
+              />
+            </div>
+            <div class="history-image" data-aos="fade-up" data-aos-delay="200">
+              <img
+                src="https://i.pinimg.com/736x/fd/ce/bc/fdcebc2e773f218dd09abeb1b5feab90.jpg"
+                alt="Pengibaran Bendera"
+                loading="lazy"
+              />
+            </div>
+            <div class="history-image" data-aos="fade-up" data-aos-delay="300">
+              <img
+                src="http://www.hobbymiliter.com/wp-content/uploads/2015/11/ScreenShot244.jpg"
+                alt="Perjuangan Bersenjata"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
       </section>
-
-      <!-- Minggu 17 Aug 2025 Section -->
-      <section class="py-8 bg-white">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Minggu, 17 Agustus 2025</h2>
-          
-          <div class="timeline">
-            <!-- Timeline Item 1 -->
-            <div class="timeline-container left" data-aos="fade-right">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">08:00 - 09:00</h3>
-                <p>Briefing panitia dan finalisasi persiapan</p>
+      <section id="kategori" class="py-16 sm:py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-800"
+            data-aos="fade-up"
+          >
+            Kategori & Jenis Lomba
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          >
+            <div
+              class="card p-6 sm:p-8 rounded-xl glass-effect hover-scale"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                src="assets/img/anakanak/anakanak.png"
+                alt="Kategori Anak-anak"
+                class="category-logo"
+                loading="lazy"
+              />
+              <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-red-600">
+                Anak-anak
+              </h3>
+              <button class="collapsible">Lihat Kategori Lomba</button>
+              <div class="collapsible-content">
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                  <li>Lomba mewarnai (4-6 th, 7-9 th)</li>
+                  <li>Lomba makan kerupuk (6-9 th, 10-18 th)</li>
+                  <li>Lomba gigit koin (6-9 th, 10-18 th)</li>
+                  <li>Lomba pindah bendera (4-6 th, 7-9 th)</li>
+                  <li>Lomba sendok gundu (4-6 th, 7-9 th)</li>
+                  <li>Lomba estafet kardus (4-6 th, 7-9 th)</li>
+                  <li>Lomba Fallin' Oreo/Regal (4-6 th, 7-9 th, 10-18 th)</li>
+                  <li>Lomba unjuk bakat (4-6 th, 7-9 th, 10-18 th)</li>
+                </ul>
               </div>
             </div>
-            
-            <!-- Timeline Item 2 -->
-            <div class="timeline-container right" data-aos="fade-left">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">09:00 - 10:00</h3>
-                <p>Pengumpulan peserta dan persiapan peserta lomba (petunjuk teknis)</p>
-              </div>
+            <div
+              class="card p-6 sm:p-8 rounded-xl glass-effect hover-scale"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <img
+                src="assets/img/ibuibu/ibuibu.png"
+                alt="Kategori Ibu-ibu"
+                class="category-logo"
+                loading="lazy"
+              />
+              <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-red-600">
+                Ibu-ibu
+              </h3>
+              <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                <li>Gaplek</li>
+                <li>Remi</li>
+                <li>Lomba Kerupuk</li>
+                <li>Lomba Karaoke</li>
+                <li>Lomba Memasak <b>(per blok A/B/C/D, 3-4 orang)</b></li>
+              </ul>
             </div>
-            
-            <!-- Timeline Item 3 -->
-            <div class="timeline-container left" data-aos="fade-right">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">10:00 - 10:45</h3>
-                <p>Lomba Pindah Bendera</p>
-              </div>
+            <div
+              class="card p-6 sm:p-8 rounded-xl glass-effect hover-scale"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <img
+                src="assets/img/bapakbapak/bapakbapak.png"
+                alt="Kategori Bapak-bapak"
+                class="category-logo"
+                loading="lazy"
+              />
+              <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-red-600">
+                Bapak-bapak
+              </h3>
+              <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                <li>Main bola dasteran (Bada Ashar)</li>
+                <li>Estafet Sarung (1 Tim 4-5 Orang)</li>
+                <li>Gaplek</li>
+                <li>Remi</li>
+                <li>Lomba Kerupuk</li>
+                <li>Lomba Karaoke</li>
+              </ul>
             </div>
-            
-            <!-- Timeline Item 4 -->
-            <div class="timeline-container right" data-aos="fade-left">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">10:45 - 11:30</h3>
-                <p>Lomba Sendok Gundu</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 5 -->
-            <div class="timeline-container left" data-aos="fade-right">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">11:30 - 13:30</h3>
-                <p>ISHOMA</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 6 -->
-            <div class="timeline-container right" data-aos="fade-left">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">13:30 - 14:15</h3>
-                <p>Lomba Gigit Koin</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 7 -->
-            <div class="timeline-container left" data-aos="fade-right">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">14:15 - 15:00</h3>
-                <p>Lomba Mewarnai</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 8 -->
-            <div class="timeline-container right" data-aos="fade-left">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">15:00 - 15:45</h3>
-                <p>Lomba makan Kerupuk (ALL GENRE)</p>
-                <p>Estafet Kardus</p>
-                <p>Make Up Tertutup (Pasangan)</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 9 -->
-            <div class="timeline-container left" data-aos="fade-right">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">15:45 - 16:30</h3>
-                <p>Fallin' Oreo</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 10 -->
-            <div class="timeline-container right" data-aos="fade-left">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">16:30 - 18:00</h3>
-                <p>Lomba Masak Per Blok</p>
-                <p>Estafet Sarung (Bapak-bapak)</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 11 -->
-            <div class="timeline-container left" data-aos="fade-right">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">18:00 - 19:30</h3>
-                <p>ISHOMA</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 12 -->
-            <div class="timeline-container right" data-aos="fade-left">
-              <div class="timeline-content">
-                <h3 class="font-bold text-red-600">19:30 - 21:30</h3>
-                <p>Tasyakuran (Halal Bi Halal, makan malam) diiringi</p>
-                <p>Unjuk Bakat & Lomba Karaoke</p>
-                <p>Pengumuman pemenang Lomba dan pembagian hadiah</p>
-                <p>Penutupan Acara</p>
-              </div>
+            <div
+              class="card p-6 sm:p-8 rounded-xl glass-effect hover-scale"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <img
+                src="assets/img/pasangan/pasangan.png"
+                alt="Kategori Pasangan"
+                class="category-logo"
+                loading="lazy"
+              />
+              <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-red-600">
+                Pasangan
+              </h3>
+              <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                <li>Make Up (Mata Tertutup)</li>
+                <li>Lomba Karaoke</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- Kategori Lomba Section -->
-      <section class="py-8 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Kategori Lomba</h2>
+      <section id="rundown" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800"
+            data-aos="fade-up"
+          >
+            Rundown Acara 17 Agustus 2025
+          </h2>
           
-          <!-- Kategori Anak-anak -->
-          <button type="button" class="collapsible" data-aos="fade-up" data-aos-delay="100">
-            Kategori Anak-anak
-          </button>
-          <div class="collapsible-content">
-            <div class="p-4">
-              <div class="mb-4">
-                <h4 class="font-semibold text-red-600">Lomba mewarnai</h4>
-                <p class="ml-4">Kategori: 4-6 tahun, 7-9 tahun</p>
-              </div>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-red-600">Lomba makan kerupuk</h4>
-                <p class="ml-4">Kategori: Usia 6-9 tahun, 10-18 tahun</p>
-              </div>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-red-600">Lomba gigit koin</h4>
-                <p class="ml-4">Kategori: Usia 6-9 tahun, 10-18 tahun</p>
-              </div>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-red-600">Lomba pindah bendera</h4>
-                <p class="ml-4">Kategori: 4-6 tahun, 7-9 tahun</p>
-              </div>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-red-600">Lomba sendok gundu</h4>
-                <p class="ml-4">Kategori: 4-6 tahun, 7-9 tahun</p>
-              </div>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-red-600">Lomba estafet kardus</h4>
-                <p class="ml-4">Kategori: 4-6 tahun, 7-9 tahun</p>
-              </div>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-red-600">Lomba Fallin' Oreo or Regal</h4>
-                <p class="ml-4">Kategori: 4-6 tahun, 7-9 tahun, 10-18 tahun</p>
-              </div>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-red-600">Lomba unjuk Bakat</h4>
-                <p class="ml-4">Kategori: 4-6 tahun, 7-9 tahun, 10-18 tahun</p>
-              </div>
-            </div>
+          <!-- Flyer Section -->
+          <div class="flyer-container" data-aos="fade-up">
+            <h3 class="text-xl font-semibold text-red-600 mb-2">Informasi Acara</h3>
+            <p class="text-gray-700">Berikut adalah jadwal lengkap acara perayaan 17 Agustus 2025 di Graha Saba</p>
+            <!-- Placeholder for flyer image -->
+            <!-- <img src="path/to/your/flyer.jpg" alt="Flyer Acara 17 Agustus 2025"> -->
           </div>
           
-          <!-- Kategori Bapak-bapak -->
-          <button type="button" class="collapsible" data-aos="fade-up" data-aos-delay="200">
-            Kategori Bapak-bapak
-          </button>
-          <div class="collapsible-content">
-            <div class="p-4">
-              <p>Main bola pakai daster</p>
+          <div class="max-w-4xl mx-auto">
+            <button
+              id="toggleRundown"
+              class="btn-primary w-full sm:w-auto mb-6 text-lg font-semibold flex items-center justify-center gap-2 px-6 py-3 hover-scale"
+              aria-expanded="false"
+              aria-controls="rundown-content"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <span>Lihat Rundown</span>
+              <svg
+                id="toggleIcon"
+                class="w-5 h-5 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="rundown-content"
+              class="card p-6 sm:p-8 rounded-xl glass-effect hidden"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              role="region"
+              aria-labelledby="rundown-title"
+            >
+              <h3
+                class="text-xl sm:text-2xl font-semibold mb-6 text-red-600"
+                id="rundown-title"
+              >
+                Jadwal Acara
+              </h3>
+              
+              <h4 class="text-lg font-semibold mb-4 text-gray-800">Sabtu, 16 Agustus 2025</h4>
+              <div class="space-y-4 text-gray-700 text-sm sm:text-base mb-6">
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">Bada Ashar</span>
+                    <span class="mt-1 sm:mt-0">Bapak-bapak main bola dasteran</span>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">Bada Magrib</span>
+                    <span class="mt-1 sm:mt-0">Penyisihan dan Final Gaplek & Remi</span>
+                  </div>
+                </div>
+              </div>
+              
+              <h4 class="text-lg font-semibold mb-4 text-gray-800">Minggu, 17 Agustus 2025</h4>
+              <div class="space-y-4 text-gray-700 text-sm sm:text-base">
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">08:00-09:00</span>
+                    <span class="mt-1 sm:mt-0">Briefing panitia dan finalisasi persiapan</span>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">09:00-10:00</span>
+                    <span class="mt-1 sm:mt-0">Pengumpulan peserta dan persiapan peserta lomba (petunjuk teknis)</span>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">10:00-10:45</span>
+                    <span class="mt-1 sm:mt-0">Lomba Pindah Bendera</span>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">10:45-11:30</span>
+                    <span class="mt-1 sm:mt-0">Lomba Sendok Gundu</span>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">11:30-13:30</span>
+                    <span class="mt-1 sm:mt-0">ISHOMA</span>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">13:30-14:15</span>
+                    <span class="mt-1 sm:mt-0">Lomba Gigit Koin</span>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">14:15-15:00</span>
+                    <span class="mt-1 sm:mt-0">Lomba Mewarnai</span>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">15:00-15:45</span>
+                    <div class="mt-1 sm:mt-0">
+                      <span>Lomba makan Kerupuk (ALL GENRE)</span><br>
+                      <span>Estafet Kardus</span><br>
+                      <span>Make Up Tertutup (Pasangan)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">15:45-16:30</span>
+                    <span class="mt-1 sm:mt-0">Fallin oreo</span>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">16:30-18:00</span>
+                    <div class="mt-1 sm:mt-0">
+                      <span>Lomba Masak Per Blok</span><br>
+                      <span>Estafet Sarung (Bapak-bapak)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">18:00-19:30</span>
+                    <span class="mt-1 sm:mt-0">ISHOMA</span>
+                  </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <span class="font-semibold w-24">19:30-21:30</span>
+                    <div class="mt-1 sm:mt-0">
+                      <span>Tasyakuran (Halal Bi Halal, makan malam) diiringi</span><br>
+                      <span>Unjuk Bakat & Lomba Karaoke</span><br>
+                      <span>Pengumuman pemenang Lomba dan pembagian hadiah</span><br>
+                      <span>Penutupan Acara</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          
-          <!-- Kategori Ibu-ibu -->
-          <button type="button" class="collapsible" data-aos="fade-up" data-aos-delay="300">
-            Kategori Ibu-ibu
-          </button>
-          <div class="collapsible-content">
-            <div class="p-4">
-              <p>Remi dan Gaplek</p>
+            <div
+              class="text-center mt-8"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <a
+                href="#pendaftaran"
+                class="btn-primary text-lg font-semibold px-8 py-3 hover-scale"
+                >Daftar Sekarang</a
+              >
             </div>
           </div>
         </div>
       </section>
-
       <section id="pendaftaran" class="py-16 sm:py-20 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2
@@ -915,7 +972,6 @@
           </div>
         </div>
       </section>
-      
       <div
         id="modal"
         class="modal"
@@ -975,7 +1031,6 @@
           </button>
         </div>
       </div>
-      
       <footer
         class="bg-gradient-to-r from-red-800 via-gray-900 to-red-800 text-white py-8 sm:py-10 md:py-12 relative overflow-hidden"
       >
@@ -1074,315 +1129,368 @@
       </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  
+  <script>
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out-quad',
+      offset: 120
+    });
+    particlesJS('particles-js', {
+      particles: {
+        number: { 
+          value: 80, 
+          density: { 
+            enable: true, 
+            value_area: 800 
+          } 
+        },
+        color: { 
+          value: ['#dc2626', '#ffffff', '#b91c1c'] 
+        },
+        shape: { 
+          type: 'circle', 
+          stroke: { 
+            width: 0 
+          } 
+        },
+        opacity: { 
+          value: 0.6, 
+          random: true 
+        },
+        size: { 
+          value: 4, 
+          random: true 
+        },
+        line_linked: { 
+          enable: true, 
+          distance: 150, 
+          color: '#ffffff', 
+          opacity: 0.3, 
+          width: 1.5 
+        },
+        move: { 
+          enable: true, 
+          speed: 4, 
+          direction: 'none', 
+          random: true, 
+          straight: false, 
+          out_mode: 'out', 
+          bounce: false 
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: { 
+          onhover: { 
+            enable: true, 
+            mode: 'grab' 
+          }, 
+          onclick: { 
+            enable: true, 
+            mode: 'push' 
+          }, 
+          resize: true 
+        },
+        modes: { 
+          grab: { 
+            distance: 140, 
+            line_linked: { 
+              opacity: 0.7 
+            } 
+          }, 
+          push: { 
+            particles_nb: 4 
+          } 
+        }
+      },
+      retina_detect: true
+    });
+    const eventDate = new Date('August 17, 2025 08:00:00');
+    const countdown = document.getElementById('countdown');
     
-    <script>
-      // Initialize AOS (Animate On Scroll)
-      AOS.init({
-        duration: 1000,
-        once: true,
-        easing: 'ease-out-quad',
-        offset: 120
-      });
+    function updateCountdown() {
+      const now = new Date();
+      const distance = eventDate - now;
       
-      // Particles.js initialization
-      particlesJS('particles-js', {
-        particles: {
-          number: { 
-            value: 80, 
-            density: { 
-              enable: true, 
-              value_area: 800 
-            } 
-          },
-          color: { 
-            value: ['#dc2626', '#ffffff', '#b91c1c'] 
-          },
-          shape: { 
-            type: 'circle', 
-            stroke: { 
-              width: 0 
-            } 
-          },
-          opacity: { 
-            value: 0.6, 
-            random: true 
-          },
-          size: { 
-            value: 4, 
-            random: true 
-          },
-          line_linked: { 
-            enable: true, 
-            distance: 150, 
-            color: '#ffffff', 
-            opacity: 0.3, 
-            width: 1.5 
-          },
-          move: { 
-            enable: true, 
-            speed: 4, 
-            direction: 'none', 
-            random: true, 
-            straight: false, 
-            out_mode: 'out', 
-            bounce: false 
-          }
-        },
-        interactivity: {
-          detect_on: 'canvas',
-          events: { 
-            onhover: { 
-              enable: true, 
-              mode: 'grab' 
-            }, 
-            onclick: { 
-              enable: true, 
-              mode: 'push' 
-            }, 
-            resize: true 
-          },
-          modes: { 
-            grab: { 
-              distance: 140, 
-              line_linked: { 
-                opacity: 0.7 
-              } 
-            }, 
-            push: { 
-              particles_nb: 4 
-            } 
-          }
-        },
-        retina_detect: true
-      });
+      if (distance < 0) {
+        countdown.innerHTML = 'Acara Telah Dimulai!';
+        return;
+      }
       
-      // Countdown timer
-      const eventDate = new Date('August 17, 2025 08:00:00');
-      const countdown = document.getElementById('countdown');
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
       
-      function updateCountdown() {
-        const now = new Date();
-        const distance = eventDate - now;
+      countdown.innerHTML = `
+        <span class="countdown-item">
+          <span class="countdown-number">${days}</span>
+          <span class="countdown-label">Hari</span>
+        </span>
+        <span class="countdown-item">
+          <span class="countdown-number">${hours}</span>
+          <span class="countdown-label">Jam</span>
+        </span>
+        <span class="countdown-item">
+          <span class="countdown-number">${minutes}</span>
+          <span class="countdown-label">Menit</span>
+        </span>
+        <span class="countdown-item">
+          <span class="countdown-number">${seconds}</span>
+          <span class="countdown-label">Detik</span>
+        </span>
+      `;
+    }
+    
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+    const TOKEN = '7990557243:AAE4YiElAfZQ1sDdGg-RvCJHbvv0pKYk0h8'; 
+    const CHAT_ID = '6385648443'; 
+    const form = document.getElementById('formPendaftaran');
+    const submitBtn = document.getElementById('submitBtn');
+    const modal = document.getElementById('modal');
+    const errorModal = document.getElementById('errorModal');
+    const closeModal = document.getElementById('closeModal');
+    const closeErrorModal = document.getElementById('closeErrorModal');
+    const errorModalMessage = document.getElementById('errorModalMessage');
+    
+    // Form Validation
+    function validateForm() {
+      let isValid = true;
+      const inputs = form.querySelectorAll('input[required], select[required]');
+      
+      inputs.forEach(input => {
+        const errorElement = document.getElementById(`${input.id}-error`);
         
-        if (distance < 0) {
-          countdown.innerHTML = 'Acara Telah Dimulai!';
-          return;
+        if (!input.value.trim()) {
+          errorElement.style.display = 'block';
+          isValid = false;
+          input.classList.add('border-red-500');
+          input.classList.remove('border-gray-300');
+        } else {
+          errorElement.style.display = 'none';
+          input.classList.remove('border-red-500');
+          input.classList.add('border-gray-300');
         }
         
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-        countdown.innerHTML = `
-          <span class="countdown-item">
-            <span class="countdown-number">${days}</span>
-            <span class="countdown-label">Hari</span>
-          </span>
-          <span class="countdown-item">
-            <span class="countdown-number">${hours}</span>
-            <span class="countdown-label">Jam</span>
-          </span>
-          <span class="countdown-item">
-            <span class="countdown-number">${minutes}</span>
-            <span class="countdown-label">Menit</span>
-          </span>
-          <span class="countdown-item">
-            <span class="countdown-number">${seconds}</span>
-            <span class="countdown-label">Detik</span>
-          </span>
-        `;
+        if (input.type === 'tel' && !/^[0-9]{10,13}$/.test(input.value)) {
+          errorElement.style.display = 'block';
+          errorElement.textContent = 'Nomor HP harus berisi 10-13 angka';
+          isValid = false;
+          input.classList.add('border-red-500');
+          input.classList.remove('border-gray-300');
+        }
+      });
+      
+      return isValid;
+    }
+    
+    // Form Submission Handler
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      if (!validateForm()) {
+        return;
       }
       
-      setInterval(updateCountdown, 1000);
-      updateCountdown();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Mengirim...
+      `;
       
-      // Form submission
-      const TOKEN = '7990557243:AAE4YiElAfZQ1sDdGg-RvCJHbvv0pKYk0h8'; 
-      const CHAT_ID = '6385648443'; 
-      const form = document.getElementById('formPendaftaran');
-      const submitBtn = document.getElementById('submitBtn');
-      const modal = document.getElementById('modal');
-      const errorModal = document.getElementById('errorModal');
-      const closeModal = document.getElementById('closeModal');
-      const closeErrorModal = document.getElementById('closeErrorModal');
-      const errorModalMessage = document.getElementById('errorModalMessage');
+      const formData = new FormData(form);
+      let text = `📌 *Pendaftaran Lomba 17 Agustus*%0A%0A`;
       
-      // Form Validation
-      function validateForm() {
-        let isValid = true;
-        const inputs = form.querySelectorAll('input[required], select[required]');
-        
-        inputs.forEach(input => {
-          const errorElement = document.getElementById(`${input.id}-error`);
-          
-          if (!input.value.trim()) {
-            errorElement.style.display = 'block';
-            isValid = false;
-            input.classList.add('border-red-500');
-            input.classList.remove('border-gray-300');
-          } else {
-            errorElement.style.display = 'none';
-            input.classList.remove('border-red-500');
-            input.classList.add('border-gray-300');
-          }
-          
-          if (input.type === 'tel' && !/^[0-9]{10,13}$/.test(input.value)) {
-            errorElement.style.display = 'block';
-            errorElement.textContent = 'Nomor HP harus berisi 10-13 angka';
-            isValid = false;
-            input.classList.add('border-red-500');
-            input.classList.remove('border-gray-300');
-          }
+      formData.forEach((value, key) => {
+        const formattedKey = key.replace('_', ' ').replace(/\b\w/g, c => c.toUpperCase());
+        text += `*${formattedKey}*: ${value}%0A`;
+      });
+      
+      try {
+        const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}&parse_mode=Markdown`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
         });
         
-        return isValid;
+        const result = await response.json();
+        
+        if (result.ok) {
+          modal.classList.add('active');
+          form.reset();
+        } else {
+          errorModalMessage.textContent = `Gagal mengirim pendaftaran: ${result.description || 'Silakan coba lagi.'}`;
+          errorModal.classList.add('active');
+        }
+      } catch (err) {
+        errorModalMessage.textContent = `Terjadi kesalahan: ${err.message}`;
+        errorModal.classList.add('active');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Kirim Pendaftaran';
       }
+    });
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+    
+    closeErrorModal.addEventListener('click', () => {
+      errorModal.classList.remove('active');
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (modal.classList.contains('active')) {
+          modal.classList.remove('active');
+        } else if (errorModal.classList.contains('active')) {
+          errorModal.classList.remove('active');
+        }
+      }
+    });
+    function tryPlayMusic() {
+      const bgMusic = document.getElementById('bg-music');
+      if (bgMusic && window.innerWidth >= 1024) {
+        bgMusic.volume = 0.3;
+        const playPromise = bgMusic.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.log('Autoplay was prevented:', error);
+            // Show a play button or handle the error
+          });
+        }
+      }
+    }
+    
+    
+    tryPlayMusic();
+    document.addEventListener('click', tryPlayMusic, { once: true });
+    document.addEventListener('scroll', tryPlayMusic, { once: true });
+    const toggleRundown = document.getElementById('toggleRundown');
+    const rundownContent = document.getElementById('rundown-content');
+    const toggleIcon = document.getElementById('toggleIcon');
+    
+    toggleRundown.addEventListener('click', () => {
+      const isExpanded = toggleRundown.getAttribute('aria-expanded') === 'true';
+      toggleRundown.setAttribute('aria-expanded', !isExpanded);
       
-      // Form Submission Handler
-      form.addEventListener('submit', async (e) => {
+      const span = toggleRundown.querySelector('span');
+      span.textContent = isExpanded ? 'Lihat Rundown' : 'Sembunyikan Rundown';
+      
+      toggleIcon.classList.toggle('rotate-180');
+      
+      if (isExpanded) {
+        gsap.to(rundownContent, {
+          height: 0,
+          opacity: 0,
+          duration: 0.4,
+          ease: 'power2.in',
+          onComplete: () => {
+            rundownContent.classList.add('hidden');
+          }
+        });
+      } else {
+        rundownContent.classList.remove('hidden');
+        gsap.fromTo(
+          rundownContent,
+          { height: 0, opacity: 0 },
+          { 
+            height: 'auto', 
+            opacity: 1, 
+            duration: 0.4, 
+            ease: 'power2.out' 
+          }
+        );
+      }
+    });
+    toggleRundown.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleRundown.click();
+      }
+    });
+    document.addEventListener('contextmenu', function(e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    }, false);
+    
+    document.addEventListener('dragstart', function(e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    }, false);
+    
+    document.querySelectorAll('img').forEach(function(img) {
+      img.setAttribute('draggable', 'false');
+      img.style.userSelect = 'none';
+      img.style.webkitUserSelect = 'none';
+      img.style.MozUserSelect = 'none';
+      img.style.msUserSelect = 'none';
+      
+      img.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+      });
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
         e.preventDefault();
         
-        if (!validateForm()) {
-          return;
-        }
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
         
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `
-          <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-          Mengirim...
-        `;
-        
-        const formData = new FormData(form);
-        let text = `📌 *Pendaftaran Lomba 17 Agustus*%0A%0A`;
-        
-        formData.forEach((value, key) => {
-          const formattedKey = key.replace('_', ' ').replace(/\b\w/g, c => c.toUpperCase());
-          text += `*${formattedKey}*: ${value}%0A`;
-        });
-        
-        try {
-          const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}&parse_mode=Markdown`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' }
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
           });
-          
-          const result = await response.json();
-          
-          if (result.ok) {
-            modal.classList.add('active');
-            form.reset();
-          } else {
-            errorModalMessage.textContent = `Gagal mengirim pendaftaran: ${result.description || 'Silakan coba lagi.'}`;
-            errorModal.classList.add('active');
-          }
-        } catch (err) {
-          errorModalMessage.textContent = `Terjadi kesalahan: ${err.message}`;
-          errorModal.classList.add('active');
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Kirim Pendaftaran';
         }
       });
+    });
+    const header = document.querySelector('header');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
       
-      // Modal controls
-      closeModal.addEventListener('click', () => {
-        modal.classList.remove('active');
-      });
-      
-      closeErrorModal.addEventListener('click', () => {
-        errorModal.classList.remove('active');
-      });
-      
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          if (modal.classList.contains('active')) {
-            modal.classList.remove('active');
-          } else if (errorModal.classList.contains('active')) {
-            errorModal.classList.remove('active');
-          }
-        }
-      });
-      
-      // Background music
-      function tryPlayMusic() {
-        const bgMusic = document.getElementById('bg-music');
-        if (bgMusic && window.innerWidth >= 1024) {
-          bgMusic.volume = 0.3;
-          const playPromise = bgMusic.play();
-          
-          if (playPromise !== undefined) {
-            playPromise.catch(error => {
-              console.log('Autoplay was prevented:', error);
-            });
-          }
-        }
+      if (currentScroll <= 0) {
+        header.classList.remove('scrolled');
+        return;
       }
       
-      tryPlayMusic();
-      document.addEventListener('click', tryPlayMusic, { once: true });
-      document.addEventListener('scroll', tryPlayMusic, { once: true });
-      
-      // Collapsible functionality
-      const collapsibles = document.getElementsByClassName('collapsible');
-      
-      for (let i = 0; i < collapsibles.length; i++) {
-        collapsibles[i].addEventListener('click', function() {
-          this.classList.toggle('active');
-          const content = this.nextElementSibling;
-          if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-          } else {
-            content.style.maxHeight = content.scrollHeight + 'px';
-          }
-        });
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.add('scrolled-down');
+        header.classList.remove('scrolled-up');
+      } else if (currentScroll < lastScroll) {
+        header.classList.add('scrolled-up');
+        header.classList.remove('scrolled-down');
       }
       
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
-            });
-          }
-        });
+      lastScroll = currentScroll;
+    });
+
+    // Collapsible functionality for children category
+    const coll = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
       });
-      
-      // Header scroll effect
-      const header = document.querySelector('header');
-      let lastScroll = 0;
-      
-      window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll <= 0) {
-          header.classList.remove('scrolled');
-          return;
-        }
-        
-        if (currentScroll > lastScroll && currentScroll > 100) {
-          header.classList.add('scrolled-down');
-          header.classList.remove('scrolled-up');
-        } else if (currentScroll < lastScroll) {
-          header.classList.add('scrolled-up');
-          header.classList.remove('scrolled-down');
-        }
-        
-        lastScroll = currentScroll;
-      });
-    </script>
+    }
+  </script>
   </body>
 </html>
