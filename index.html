@@ -373,18 +373,40 @@
       background-color: #e9ecef;
     }
 
-    .collapsible:after {
-      content: '+';
-      font-size: 1.2rem;
-      font-weight: bold;
-      float: right;
-      margin-left: 5px;
-      transition: transform 0.3s ease;
-    }
+    .collapsible {
+  position: relative;
+  padding: 1rem 2.5rem 1rem 1rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+  color: #222;
+  background: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+}
 
-    .collapsible.active:after {
-      content: '-';
-    }
+.collapsible:hover {
+  background: #f0f0f0;
+}
+
+.collapsible::after {
+  content: '+';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: bold;
+  color: #555;
+  transition: transform 0.3s ease, content 0.3s ease;
+}
+
+.collapsible.active::after {
+  content: '-';
+  transform: translateY(-50%) rotate(180deg);
+}
 
     .collapsible-content {
       padding: 0 1rem;
@@ -731,7 +753,7 @@
                 <li>Remi</li>
                 <li>Lomba Kerupuk</li>
                 <li>Lomba Karaoke</li>
-                <li>Lomba Memasak <b>(per blok A/B/C/D, 3-4 orang)</b></li>
+                <li>lomba menghias tumpeng <b>(per blok A/B/C/D, 3-4 orang)</b></li>
               </ul>
             </div>
             <div
