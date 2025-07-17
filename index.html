@@ -412,7 +412,111 @@
       margin-top: 1rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
+    
+    .countdown-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+    }
+    
+    .countdown-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      line-height: 1;
+    }
+    
+    .countdown-label {
+      font-size: 1rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .hero-content {
+      max-width: 800px;
+      padding: 2rem;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+    }
+    
+    /* Improved Button Group */
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--dark-color);
+    }
+    .card-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .history-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    /* Improved Footer Navigation */
+    .footer-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .footer-nav a {
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .footer-nav a:hover {
+      transform: translateX(5px);
+      color: var(--accent-color);
+    }
+    @media (max-width: 768px) {
+      .hero-content {
+        padding: 1.5rem;
+      }
+      
+      .countdown-item {
+        min-width: 60px;
+      }
+      
+      .countdown-number {
+        font-size: 2rem;
+      }
+      
+      .countdown-label {
+        font-size: 0.8rem;
+      }
+    }
+    section {
+      scroll-margin-top: 80px;
+    }
+    a:focus, button:focus, input:focus, select:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
   </style>
+
   <body>
     <audio id="bg-music" loop class="autoplay-music">
       <source src="assets/aud/INSTRUMEN_HARI_MERDEKA.mp3" type="audio/mpeg" />
@@ -431,7 +535,7 @@
         />
       </header>
       <section class="hero-section text-center relative" role="banner">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="hero-content container mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
           <h1
             class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-stroke"
             data-aos="fade-up"
@@ -449,12 +553,12 @@
           </p>
           <div
             id="countdown"
-            class="text-xl sm:text-2xl md:text-3xl font-semibold mb-8 countdown"
+            class="countdown-container"
             data-aos="fade-up"
             data-aos-delay="300"
           ></div>
           <div
-            class="flex flex-col sm:flex-row justify-center gap-4"
+            class="btn-group"
             data-aos="fade-up"
             data-aos-delay="400"
           >
@@ -524,7 +628,7 @@
               </p>
             </div>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="history-grid">
             <div class="history-image" data-aos="fade-up" data-aos-delay="100">
               <img
                 src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1610415681/wkqahc8cje4cxbxhegwz.jpg"
@@ -578,9 +682,7 @@
           >
             Kategori & Jenis Lomba
           </h2>
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
-          >
+          <div class="card-grid">
             <div
               class="card p-6 sm:p-8 rounded-xl glass-effect hover-scale"
               data-aos="fade-up"
@@ -684,13 +786,11 @@
           >
             Rundown Acara 17 Agustus 2025
           </h2>
-          
-          <!-- Flyer Section -->
           <div class="flyer-container" data-aos="fade-up">
             <h3 class="text-xl font-semibold text-red-600 mb-2">Informasi Acara</h3>
             <p class="text-gray-700">Berikut adalah jadwal lengkap acara perayaan 17 Agustus 2025 di Graha Saba</p>
             <!-- Placeholder for flyer image -->
-            <!-- <img src="path/to/your/flyer.jpg" alt="Flyer Acara 17 Agustus 2025"> -->
+            <img src="assets/WhatsApp Image 2025-07-14 at 00.06.43_db4ae12c.jpg" alt="Flyer Acara 17 Agustus 2025">
           </div>
           
           <div class="max-w-4xl mx-auto">
@@ -869,9 +969,7 @@
                 Formulir Pendaftaran Lomba 17 Agustus
               </h3>
               <div class="mb-6">
-                <label for="nama" class="block text-gray-700 font-semibold mb-2"
-                  >Nama Lengkap</label
-                >
+                <label for="nama" class="form-label">Nama Lengkap</label>
                 <input
                   type="text"
                   id="nama"
@@ -885,11 +983,7 @@
                 </p>
               </div>
               <div class="mb-6">
-                <label
-                  for="blok_rumah"
-                  class="block text-gray-700 font-semibold mb-2"
-                  >Blok/No Rumah</label
-                >
+                <label for="blok_rumah" class="form-label">Blok/No Rumah</label>
                 <input
                   type="text"
                   id="blok_rumah"
@@ -903,9 +997,7 @@
                 </p>
               </div>
               <div class="mb-6">
-                <label for="nohp" class="block text-gray-700 font-semibold mb-2"
-                  >No HP / WA</label
-                >
+                <label for="nohp" class="form-label">No HP / WA</label>
                 <input
                   type="tel"
                   id="nohp"
@@ -920,11 +1012,7 @@
                 </p>
               </div>
               <div class="mb-6">
-                <label
-                  for="kategori"
-                  class="block text-gray-700 font-semibold mb-2"
-                  >Kategori</label
-                >
+                <label for="kategori" class="form-label">Kategori</label>
                 <select
                   id="kategori"
                   name="kategori"
@@ -943,11 +1031,7 @@
                 </p>
               </div>
               <div class="mb-8">
-                <label
-                  for="lomba"
-                  class="block text-gray-700 font-semibold mb-2"
-                  >Jenis Lomba</label
-                >
+                <label for="lomba" class="form-label">Jenis Lomba</label>
                 <input
                   type="text"
                   id="lomba"
@@ -1058,29 +1142,28 @@
               >
                 Navigasi
               </h3>
-              <nav class="flex flex-col space-y-2 sm:space-y-3">
+              <nav class="footer-nav">
                 <a
                   href="#"
-                  class="text-sm sm:text-base group text-gray-300 hover:text-yellow-300 transition-all duration-300 font-medium after:content-[''] after:block after:w-0 after:h-0.5 after:bg-yellow-300 after:transition-all after:duration-300 group-hover:after:w-full"
-                  >Beranda </a
-                ><a
+                  class="text-sm sm:text-base text-gray-300 hover:text-yellow-300"
+                  >Beranda</a>
+                <a
                   href="#sejarah"
-                  class="text-sm sm:text-base group text-gray-300 hover:text-yellow-300 transition-all duration-300 font-medium after:content-[''] after:block after:w-0 after:h-0.5 after:bg-yellow-300 after:transition-all after:duration-300 group-hover:after:w-full"
-                  >Sejarah </a
-                ><a
+                  class="text-sm sm:text-base text-gray-300 hover:text-yellow-300"
+                  >Sejarah</a>
+                <a
                   href="#kategori"
-                  class="text-sm sm:text-base group text-gray-300 hover:text-yellow-300 transition-all duration-300 font-medium after:content-[''] after:block after:w-0 after:h-0.5 after:bg-yellow-300 after:transition-all after:duration-300 group-hover:after:w-full"
-                  >Kategori </a
-                ><a
+                  class="text-sm sm:text-base text-gray-300 hover:text-yellow-300"
+                  >Kategori</a>
+                <a
                   href="#pendaftaran"
-                  class="text-sm sm:text-base group text-gray-300 hover:text-yellow-300 transition-all duration-300 font-medium after:content-[''] after:block after:w-0 after:h-0.5 after:bg-yellow-300 after:transition-all after:duration-300 group-hover:after:w-full"
-                  >Pendaftaran </a
-                ><a
+                  class="text-sm sm:text-base text-gray-300 hover:text-yellow-300"
+                  >Pendaftaran</a>
+                <a
                   href="https://pendaftaranlomba17.vercel.app/assets/page/peserta.date.dev.html"
-                  class="text-sm sm:text-base group text-gray-300 hover:text-yellow-300 transition-all duration-300 font-medium after:content-[''] after:block after:w-0 after:h-0.5 after:bg-yellow-300 after:transition-all after:duration-300 group-hover:after:w-full"
+                  class="text-sm sm:text-base text-gray-300 hover:text-yellow-300"
                   rel="noopener noreferrer"
-                  >Peserta</a
-                >
+                  >Peserta</a>
               </nav>
             </div>
             <div
@@ -1218,7 +1301,7 @@
       const distance = eventDate - now;
       
       if (distance < 0) {
-        countdown.innerHTML = 'Acara Telah Dimulai!';
+        countdown.innerHTML = '<div class="text-2xl font-bold">Acara Telah Dimulai!</div>';
         return;
       }
       
@@ -1228,22 +1311,22 @@
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
       
       countdown.innerHTML = `
-        <span class="countdown-item">
-          <span class="countdown-number">${days}</span>
-          <span class="countdown-label">Hari</span>
-        </span>
-        <span class="countdown-item">
-          <span class="countdown-number">${hours}</span>
-          <span class="countdown-label">Jam</span>
-        </span>
-        <span class="countdown-item">
-          <span class="countdown-number">${minutes}</span>
-          <span class="countdown-label">Menit</span>
-        </span>
-        <span class="countdown-item">
-          <span class="countdown-number">${seconds}</span>
-          <span class="countdown-label">Detik</span>
-        </span>
+        <div class="countdown-item">
+          <div class="countdown-number">${days}</div>
+          <div class="countdown-label">Hari</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number">${hours}</div>
+          <div class="countdown-label">Jam</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number">${minutes}</div>
+          <div class="countdown-label">Menit</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number">${seconds}</div>
+          <div class="countdown-label">Detik</div>
+        </div>
       `;
     }
     
