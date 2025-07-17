@@ -10,97 +10,55 @@
   <title>Daftar Peserta Lomba 17 Agustus 2025</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <style>
+    :root {
+      --primary-color: #dc2626;
+      --primary-dark: #b91c1c;
+      --primary-light: #fecaca;
+      --text-color: #1f2937;
+      --text-light: #6b7280;
+      --bg-light: #f9fafb;
+    }
+    
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+    
     html, body {
       width: 100%;
+      min-height: 100vh;
       overflow-x: hidden;
       scroll-behavior: smooth;
-    }
-    body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    
+    body {
       background: linear-gradient(135deg, #b91c1c, #dc2626, #ffffff, #dc2626, #b91c1c);
-      color: #1f2937;
+      color: var(--text-color);
       position: relative;
+      display: flex;
+      flex-direction: column;
     }
-    .card {
-      background: rgba(255, 255, 255, 0.98);
-      border-radius: 12px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      backdrop-filter: blur(10px);
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-    }
-    .btn-primary {
-      background: #dc2626;
-      border: none;
-      border-radius: 8px;
-      padding: 0.75rem 1.5rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: 0.5s;
-    }
-    .btn-primary:hover::after {
-      left: 100%;
-    }
-    .btn-primary:hover {
-      background: #b91c1c;
-      transform: scale(1.05);
-    }
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      overflow: hidden;
-    }
-    table tr {
-      transition: background 0.3s ease;
-    }
-    table tbody tr:hover {
-      background: #f3f4f6;
-    }
-    .form-input, .form-select {
-      transition: all 0.3s ease;
-      border: 2px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 0.75rem;
-    }
-    .form-input:focus, .form-select:focus {
-      border-color: #dc2626;
-      box-shadow: 0 0 8px rgba(220, 38, 38, 0.3);
-      outline: none;
-    }
+    
+    /* Header Styles */
     header {
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('https://source.unsplash.com/random/1920x1080/?indonesia,flag') no-repeat center center/cover;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), 
+                  url('https://source.unsplash.com/random/1920x1080/?indonesia,flag') no-repeat center center/cover;
       color: white;
       position: relative;
       min-height: 50vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
     }
+    
     header::before {
       content: '';
       position: absolute;
@@ -111,259 +69,655 @@
       background: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
+    
     header > * {
       position: relative;
       z-index: 2;
     }
-    footer a {
-      transition: color 0.3s ease, transform 0.3s ease;
+    .card {
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(10px);
+      width: 100%;
+      overflow: hidden;
     }
-    footer a:hover {
-      color: #ff6b6b;
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .btn-primary {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: 0.5s;
+    }
+    
+    .btn-primary:hover::after {
+      left: 100%;
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-dark);
       transform: translateY(-2px);
     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+    
+    th {
+      background: var(--primary-color);
+      color: white;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+    }
+    
+    tr {
+      transition: background-color 0.2s ease;
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--bg-light);
+    }
+    
+    tr:hover {
+      background-color: #f3f4f6;
+    }
+    .competition-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    
+    .competition-item {
+      background-color: #f3f4f6;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    .category-label {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    
+    .category-bapak {
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+    
+    .category-ibu {
+      background-color: #fce7f3;
+      color: #9d174d;
+    }
+    
+    .category-anak {
+      background-color: #dcfce7;
+      color: #166534;
+    }
+    
+    .category-pasangan {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+    .form-input, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background-color: white;
+    }
+    
+    .form-input:focus, .form-select:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+      outline: none;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+    
+    /* Modal Styles */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      max-width: 90%;
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transform: scale(0.9);
+      transition: all 0.3s ease;
+    }
+    
+    .modal.active .modal-content {
+      transform: scale(1);
+    }
+    footer {
+      background: linear-gradient(to right, #991b1b, #1f2937, #991b1b);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: auto;
+    }
+    
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+    
+    /* Responsive Adjustments */
     @media (max-width: 640px) {
       header h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
+      
       header p {
         font-size: 1rem;
       }
+      
       .card {
         padding: 1rem;
       }
-      .btn-primary {
-        padding: 0.5rem 1rem;
-      }
-      table th, table td {
-        font-size: 0.85rem;
+      
+      th, td {
         padding: 0.5rem;
+        font-size: 0.85rem;
       }
+      
       .form-input, .form-select {
+        padding: 0.5rem 0.75rem;
         font-size: 0.9rem;
       }
+      
+      .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .competition-list {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      
+      .competition-item {
+        white-space: normal;
+      }
     }
+    
     @media (min-width: 641px) and (max-width: 1024px) {
+      header h1 {
+        font-size: 3rem;
+      }
+      
+      .container {
+        padding: 0 2rem;
+      }
+    }
+    
+    @media (min-width: 1025px) {
       header h1 {
         font-size: 3.5rem;
       }
-      table th, table td {
-        font-size: 0.9rem;
-      }
     }
-    @media (min-width: 1025px) {
-      header h1 {
-        font-size: 4.5rem;
-      }
-      table th, table td {
-        font-size: 1rem;
-      }
+    
+    /* Utility Classes */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
     }
+    
+    .section {
+      padding: 3rem 0;
+    }
+    
+    .text-balance {
+      text-wrap: balance;
+    }
+    
+    .nowrap {
+      white-space: nowrap;
+    }
+    
   </style>
 </head>
 <body>
+  <img
+    src="/assets/img/dirgahayu.jpg"
+    alt="Dirgahayu Republik Indonesia 80 Tahun - Graha Saba"
+    class="w-full h-auto max-h-32 sm:max-h-40 md:max-h-48 object-cover transition-all duration-300"
+    data-aos="fade-down"
+  />
   <div id="particles-js"></div>
-  <header class="py-20 text-center" data-aos="fade-up">
-    <div class="container mx-auto px-4">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">Daftar Peserta Lomba 17 Agustus 2025</h1>
-      <p class="text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto">Lihat daftar peserta yang telah terdaftar untuk merayakan kemerdekaan dengan semangat dan keceriaan!</p>
+  
+  <header data-aos="fade-up">
+    <div class="container">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Daftar Peserta Lomba 17 Agustus 2025</h1>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto text-balance">Lihat daftar peserta yang telah terdaftar!</p>
     </div>
   </header>
-  <section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="card p-6 md:p-10 rounded-xl shadow-xl" data-aos="zoom-in">
-        <div class="flex flex-col md:flex-row gap-4 mb-8">
-          <div class="flex-1">
+  
+  <main class="section bg-gray-50">
+    <div class="container">
+      <div class="card p-6 md:p-8 shadow-lg" data-aos="zoom-in">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div class="md:col-span-2">
             <label class="block text-gray-700 font-semibold mb-2">Cari Nama Peserta</label>
-            <input id="searchInput" type="text" placeholder="Masukkan nama..." class="form-input w-full px-4 py-3" aria-label="Cari nama peserta">
+            <input id="searchInput" type="text" placeholder="Masukkan nama..." class="form-input" aria-label="Cari nama peserta">
           </div>
-          <div class="flex-1">
+          <div>
             <label class="block text-gray-700 font-semibold mb-2">Filter Kategori</label>
-            <select id="categoryFilter" class="form-select w-full px-4 py-3" aria-label="Filter kategori">
+            <select id="categoryFilter" class="form-select" aria-label="Filter kategori">
               <option value="all">Semua Kategori</option>
-              <option value="Anak-anak">Anak-anak</option>
-              <option value="Ibu-ibu">Ibu-ibu</option>
               <option value="Bapak-bapak">Bapak-bapak</option>
+              <option value="Ibu-ibu">Ibu-ibu</option>
+              <option value="Anak-anak">Anak-anak</option>
               <option value="Pasangan">Pasangan</option>
             </select>
           </div>
-          <div class="flex items-end">
-            <button id="refreshBtn" class="btn-primary text-white px-6 py-3 text-lg font-semibold" aria-label="Refresh data">Refresh</button>
-          </div>
         </div>
-        <div class="overflow-x-auto">
-          <table class="w-full table-auto border-collapse" aria-label="Tabel daftar peserta">
+        
+        <div class="flex justify-end mb-4">
+          <button id="refreshBtn" class="btn-primary" aria-label="Refresh data">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+            </svg>
+            Refresh Data
+          </button>
+        </div>
+        
+        <div class="overflow-x-auto rounded-lg border border-gray-200">
+          <table class="min-w-full" aria-label="Tabel daftar peserta">
             <thead>
-              <tr class="bg-red-600 text-white">
-                <th class="px-4 py-3 text-left font-semibold">No</th>
-                <th class="px-4 py-3 text-left font-semibold">Nama</th>
-                <th class="px-4 py-3 text-left font-semibold">Blok/No</th>
-                <th class="px-4 py-3 text-left font-semibold">No HP</th>
-                <th class="px-4 py-3 text-left font-semibold">Kategori</th>
-                <th class="px-4 py-3 text-left font-semibold">Lomba</th>
+              <tr>
+                <th class="px-4 py-3">No</th>
+                <th class="px-4 py-3">Nama</th>
+                <th class="px-4 py-3">Blok/No</th>
+                <th class="px-4 py-3">No HP</th>
+                <th class="px-4 py-3 nowrap">Kategori</th>
+                <th class="px-4 py-3">Lomba</th>
               </tr>
             </thead>
             <tbody id="participantTable">
-              <tr>
-                <td class="px-4 py-3 border-t">1</td>
-                <td class="px-4 py-3 border-t">Contoh Peserta</td>
-                <td class="px-4 py-3 border-t">08123456789</td>
-                <td class="px-4 py-3 border-t">Anak-anak</td>
-                <td class="px-4 py-3 border-t">Lomba Kerupuk</td>
-              </tr>
+              <!-- Data will be inserted here by JavaScript -->
             </tbody>
           </table>
         </div>
       </div>
     </div>
-  </section>
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center" data-aos="zoom-in">
-    <div class="bg-white p-8 md:p-10 rounded-xl max-w-md w-full text-center shadow-2xl">
-      <h3 class="text-3xl font-bold text-green-600 mb-6">Data Diperbarui!</h3>
-      <p class="text-gray-700 mb-8 text-lg">Daftar peserta telah diperbarui. Mohon menunggu jika nama Anda belum tercantum, karena proses ini dilakukan secara manual oleh panitia.</p>
-      <button id="closeModal" class="btn-primary text-white text-lg font-semibold">Tutup</button>
+  </main>
+  
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-500 mx-auto mb-4" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">Data Diperbarui!</h3>
+        <p class="text-gray-600 mb-6">Daftar peserta telah diperbarui. Mohon menunggu jika nama Anda belum tercantum, karena proses ini dilakukan secara manual oleh panitia.</p>
+        <button id="closeModal" class="btn-primary px-6 py-2">Tutup</button>
+      </div>
     </div>
   </div>
-  <footer class="py-8 bg-gradient-to-r from-red-800 via-gray-900 to-red-800 text-white text-center" role="contentinfo">
-  <div class="container mx-auto px-4">
-    <p class="text-xs sm:text-sm md:text-base font-semibold">
-      © 2025 <span class="text-red-300">Panitia 17 Agustus Graha Saba</span>. All Rights Reserved.
-    </p>
-        <div class="mt-4 flex flex-wrap justify-center gap-3 text-[11px] sm:gap-6 sm:text-sm md:text-base z-10 relative">
-  <a href="https://pendaftaranlomba17.vercel.app" class="hover:text-red-400 transition relative z-10">Beranda</a>
-  <a href="https://pendaftaranlomba17.vercel.app/#sejarah" class="hover:text-red-400 transition relative z-10">Sejarah</a>
-  <a href="https://pendaftaranlomba17.vercel.app/#kategori" class="hover:text-red-400 transition relative z-10">Kategori</a>
-  <a href="https://pendaftaranlomba17.vercel.app/#pendaftaran" class="hover:text-red-400 transition relative z-10">Pendaftaran</a>
-  <a href="#" class="hover:text-red-400 transition relative z-10" rel="noopener noreferrer">Peserta</a>
-</div>
+  
+  <footer class="bg-gradient-to-r from-red-800 via-gray-900 to-red-800 text-white py-10 md:py-12 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10 flex flex-col items-center">
+      <img
+        src="/assets/img/sabalogo.jpg"
+        alt="Logo Graha Saba"
+        class="w-20 md:w-24 h-20 md:h-24 rounded-full object-cover transition duration-300 hover:scale-105 mb-4"
+        loading="lazy"
+      />
+      <p class="text-base md:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">
+        Graha Saba mempersembahkan perayaan 80 tahun kemerdekaan dengan semangat persatuan dan inovasi.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center sm:text-left">
+      <!-- Navigasi -->
+      <div>
+        <h3 class="text-lg md:text-xl font-bold text-yellow-400 mb-4 border-b border-yellow-300 pb-2">Navigasi</h3>
+        <nav class="space-y-2">
+          <a href="https://pendaftaranlomba17.vercel.app/#" class="block text-gray-300 hover:text-yellow-300 transition">Beranda</a>
+          <a href="https://pendaftaranlomba17.vercel.app/#sejarah" class="block text-gray-300 hover:text-yellow-300 transition">Sejarah</a>
+          <a href="https://pendaftaranlomba17.vercel.app/#kategori" class="block text-gray-300 hover:text-yellow-300 transition">Kategori</a>
+          <a href="https://pendaftaranlomba17.vercel.app/#pendaftaran" class="block text-gray-300 hover:text-yellow-300 transition">Pendaftaran</a>
+          <a href="https://pendaftaranlomba17.vercel.app/assets/page/peserta.date.dev.html" target="_blank" rel="noopener noreferrer" class="block text-gray-300 hover:text-yellow-300 transition">Peserta</a>
+        </nav>
       </div>
-    </footer>
+
+      <div class="sm:col-span-1 md:col-span-1">
+        <h3 class="text-lg md:text-xl font-bold text-yellow-400 mb-4 border-b border-yellow-300 pb-2">Alamat</h3>
+        <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-4">
+          Jl. Pancawarna No.3, RT.03/RW.04, Curug, Kec. Gn. Sindur, Kabupaten Bogor, Jawa Barat 16340
+        </p>
+        <div class="flex justify-center sm:justify-start items-center gap-2">
+          <span class="w-2 h-2 bg-yellow-400 rounded-full"></span>
+          <p class="text-gray-400 text-xs md:text-sm">© 2025 Panitia 17 Agustus Graha Saba. All Rights Reserved.</p>
+        </div>
+      </div>
+      <div class="sm:col-span-1 md:col-span-1">
+        <h3 class="text-lg md:text-xl font-bold text-yellow-400 mb-4 border-b border-yellow-300 pb-2">Kontak</h3>
+        <p class="text-gray-200 text-sm md:text-base">Telepon: (08) 7734-0346-77</p>
+      </div>
+    </div>
+    <div class="mt-10 border-t border-gray-700 pt-4 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-gray-400 gap-2">
+      <p>Dirgahayu RI ke-80 - Graha Saba</p>
+      <p class="text-yellow-300">Diperbarui: 03 Jul 2025, 14:28 WIB</p>
+    </div>
+  </div>
+</footer>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1200, once: true });
-
+    // Initialize AOS animations
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out-quad'
+    });
+    
+    // Initialize particles.js
     particlesJS('particles-js', {
       particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: ['#dc2626', '#ffffff', '#b91c1c'] },
-        shape: { type: 'circle', stroke: { width: 0 } },
-        opacity: { value: 0.6, random: true },
-        size: { value: 4, random: true },
-        line_linked: { enable: true, distance: 120, color: '#ffffff', opacity: 0.3, width: 1.5 },
-        move: { enable: true, speed: 4, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+        number: { 
+          value: 80, 
+          density: { 
+            enable: true, 
+            value_area: 800 
+          } 
+        },
+        color: { 
+          value: ['#dc2626', '#ffffff', '#b91c1c'] 
+        },
+        shape: { 
+          type: 'circle', 
+          stroke: { 
+            width: 0 
+          } 
+        },
+        opacity: { 
+          value: 0.6, 
+          random: true 
+        },
+        size: { 
+          value: 4, 
+          random: true 
+        },
+        line_linked: { 
+          enable: true, 
+          distance: 120, 
+          color: '#ffffff', 
+          opacity: 0.3, 
+          width: 1.5 
+        },
+        move: { 
+          enable: true, 
+          speed: 4, 
+          direction: 'none', 
+          random: true, 
+          straight: false, 
+          out_mode: 'out', 
+          bounce: false 
+        }
       },
       interactivity: {
         detect_on: 'canvas',
-        events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' }, resize: true },
-        modes: { grab: { distance: 140, line_linked: { opacity: 0.7 } }, push: { particles_nb: 4 } }
+        events: { 
+          onhover: { 
+            enable: true, 
+            mode: 'grab' 
+          }, 
+          onclick: { 
+            enable: true, 
+            mode: 'push' 
+          }, 
+          resize: true 
+        },
+        modes: { 
+          grab: { 
+            distance: 140, 
+            line_linked: { 
+              opacity: 0.7 
+            } 
+          }, 
+          push: { 
+            particles_nb: 4 
+          } 
+        }
       },
       retina_detect: true
     });
-
+    
+    // Sample participant data
     const participants = [
       { id: 1, nama: 'Dian Passage', blokno: 'A1 No10', nohp: '081911994353', kategori: 'Bapak-bapak', lomba: 'Remi, Estafet sarung' },
       { id: 2, nama: 'Hermadi', blokno: 'A2 No5', nohp: '087880473444', kategori: 'Bapak-bapak', lomba: 'Estafet sarung' },
       { id: 3, nama: 'Usmanto', blokno: 'B1 No2', nohp: '082123343105', kategori: 'Bapak-bapak', lomba: 'Remi, Gaple' },
-      { id: 4, nama: ' Agus Ponco', blokno: 'A1 No7', nohp: '089681772211', kategori: 'Bapak-bapak', lomba: 'Remi, Gaple' },
+      { id: 4, nama: 'Agus Ponco', blokno: 'A1 No7', nohp: '089681772211', kategori: 'Bapak-bapak', lomba: 'Remi, Gaple' },
       { id: 5, nama: 'Fenno Steginga', blokno: 'D1 No4', nohp: '081574999975', kategori: 'Bapak-bapak', lomba: 'Remi, Gaple' },
       { id: 6, nama: 'Herawan', blokno: 'D2 No2', nohp: '085826267397', kategori: 'Bapak-bapak', lomba: 'Gaple' },
       { id: 7, nama: 'Iwan J', blokno: 'A1 No8', nohp: '088298291857', kategori: 'Bapak-bapak', lomba: 'Gaple' },
       { id: 8, nama: 'Ferry J', blokno: 'B2 No5', nohp: '081298491015', kategori: 'Bapak-bapak', lomba: 'Gaple' },
     ];
-
+    
+    // Get category class based on category name
+    function getCategoryClass(category) {
+      switch(category) {
+        case 'Bapak-bapak': return 'category-bapak';
+        case 'Ibu-ibu': return 'category-ibu';
+        case 'Anak-anak': return 'category-anak';
+        case 'Pasangan': return 'category-pasangan';
+        default: return '';
+      }
+    }
+    
+    // Format competition list
+    function formatCompetitions(competitions) {
+      if (!competitions) return '-';
+      
+      const competitionArray = competitions.split(',').map(item => item.trim());
+      return `
+        <div class="competition-list">
+          ${competitionArray.map(comp => `<span class="competition-item">${comp}</span>`).join('')}
+        </div>
+      `;
+    }
+    
+    // Render table function
     function renderTable(data) {
-  const tbody = document.getElementById('participantTable');
-  tbody.innerHTML = '';
-  data.forEach((item, index) => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td class="px-4 py-3 border-t">${index + 1}</td>
-      <td class="px-4 py-3 border-t">${item.nama}</td>
-      <td class="px-4 py-3 border-t">${item.blokno || '-'}</td>
-      <td class="px-4 py-3 border-t">${item.nohp}</td>
-      <td class="px-4 py-3 border-t">${item.kategori}</td>
-      <td class="px-4 py-3 border-t">${item.lomba}</td>
-    `;
-    tbody.appendChild(row);
-  });
-}
-
-
-    renderTable(participants);
-
-    const searchInput = document.getElementById('searchInput');
-    const categoryFilter = document.getElementById('categoryFilter');
-
+      const tbody = document.getElementById('participantTable');
+      tbody.innerHTML = '';
+      
+      if (data.length === 0) {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td colspan="6" class="px-4 py-3 text-center text-gray-500">
+            Tidak ada data yang ditemukan
+          </td>
+        `;
+        tbody.appendChild(row);
+        return;
+      }
+      
+      data.forEach((item, index) => {
+        const row = document.createElement('tr');
+        const categoryClass = getCategoryClass(item.kategori);
+        
+        row.innerHTML = `
+          <td class="px-4 py-3">${index + 1}</td>
+          <td class="px-4 py-3 font-medium">${item.nama}</td>
+          <td class="px-4 py-3">${item.blokno || '-'}</td>
+          <td class="px-4 py-3">${item.nohp}</td>
+          <td class="px-4 py-3"><span class="category-label ${categoryClass}">${item.kategori}</span></td>
+          <td class="px-4 py-3">${formatCompetitions(item.lomba)}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+    
+    // Filter data function
     function filterData() {
       const searchTerm = searchInput.value.toLowerCase();
       const category = categoryFilter.value;
-      let filtered = participants;
-
-      if (searchTerm) {
-        filtered = filtered.filter(item => item.nama.toLowerCase().includes(searchTerm));
-      }
-
-      if (category !== 'all') {
-        filtered = filtered.filter(item => item.kategori === category);
-      }
-
+      
+      let filtered = participants.filter(item => {
+        const matchesSearch = item.nama.toLowerCase().includes(searchTerm);
+        const matchesCategory = category === 'all' || item.kategori === category;
+        return matchesSearch && matchesCategory;
+      });
+      
       renderTable(filtered);
     }
-
-    searchInput.addEventListener('input', filterData);
-    categoryFilter.addEventListener('change', filterData);
-
+    
+    // DOM elements
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
     const refreshBtn = document.getElementById('refreshBtn');
     const modal = document.getElementById('modal');
     const closeModal = document.getElementById('closeModal');
-
+    
+    // Event listeners
+    searchInput.addEventListener('input', filterData);
+    categoryFilter.addEventListener('change', filterData);
+    
     refreshBtn.addEventListener('click', () => {
       renderTable(participants);
       searchInput.value = '';
       categoryFilter.value = 'all';
-      modal.classList.remove('hidden');
-      gsap.fromTo(modal.querySelector('div'), 
-        { scale: 0.8, opacity: 0 }, 
-        { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.7)' }
-      );
+      
+      // Show modal
+      modal.classList.add('active');
     });
-
+    
     closeModal.addEventListener('click', () => {
-      gsap.to(modal.querySelector('div'), {
-        scale: 0.8,
-        opacity: 0,
-        duration: 0.3,
-        ease: 'back.in(1.7)',
-        onComplete: () => modal.classList.add('hidden')
-      });
+      modal.classList.remove('active');
     });
-
+    
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
-        gsap.to(modal.querySelector('div'), {
-          scale: 0.8,
-          opacity: 0,
-          duration: 0.3,
-          ease: 'back.in(1.7)',
-          onComplete: () => modal.classList.add('hidden')
-        });
+        modal.classList.remove('active');
       }
     });
-
-    gsap.to('header h1', {
-      y: 0,
-      opacity: 1,
+    
+    // Initial render
+    renderTable(participants);
+    
+    // Header animation
+    gsap.from('header h1', {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+      delay: 0.3
+    });
+    
+    gsap.from('header p', {
+      y: 30,
+      opacity: 0,
       duration: 1,
       ease: 'power3.out',
       delay: 0.5
     });
-    gsap.to('header p', {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      ease: 'power3.out',
-      delay: 0.7
-    });
+    const header = document.querySelector('header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll <= 0) {
+    header.classList.remove('scrolled');
+    return;
+  }
+
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    header.classList.add('scrolled-down');
+    header.classList.remove('scrolled-up');
+  } else if (currentScroll < lastScroll) {
+    header.classList.add('scrolled-up');
+    header.classList.remove('scrolled-down');
+  }
+
+  lastScroll = currentScroll;
+});
   </script>
 </body>
 </html>
