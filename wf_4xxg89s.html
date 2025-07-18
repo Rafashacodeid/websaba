@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>403 Access Denied</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --text: #202124;
+      --gray: #5f6368;
+      --border: #dadce0;
+      --highlight: #d93025;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      background: var(--bg);
+      font-family: 'Roboto', sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .waf-box {
+      background: #fff;
+      padding: 36px 28px;
+      max-width: 480px;
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+
+    .waf-box img {
+      width: 92px;
+      margin-bottom: 20px;
+    }
+
+    .waf-box h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--highlight);
+      margin-bottom: 10px;
+    }
+
+    .waf-box p {
+      font-size: 15px;
+      color: var(--gray);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .info {
+      text-align: left;
+      background: #f1f3f4;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: monospace;
+      color: #3c4043;
+      margin-bottom: 20px;
+    }
+
+    .info p {
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      font-size: 13px;
+      color: #9aa0a6;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 480px) {
+      .waf-box {
+        padding: 28px 20px;
+      }
+
+      .waf-box h1 {
+        font-size: 20px;
+      }
+
+      .waf-box img {
+        width: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="waf-box">
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo">
+    <h1>Akses Ditolak</h1>
+    <p>
+      Permintaan ini telah diblokir oleh sistem keamanan otomatis kami karena terdeteksi sebagai aktivitas tidak sah.
+    </p>
+    <div class="info">
+      <p><strong>Kode:</strong> 403 Forbidden</p>
+      <p><strong>IP:</strong> <span id="user-ip">Memuat...</span></p>
+      <p><strong>Waktu:</strong> <span id="current-time">Memuat...</span></p>
+      <p><strong>Alasan:</strong> Potensi serangan atau bot terdeteksi</p>
+    </div>
+    <p>Jika Anda yakin ini adalah kesalahan, hubungi administrator di <strong>aabuse@google.com</strong></p>
+    <div class="footer">
+      Web Application Firewall Protection © 2025
+    </div>
+  </div>
+
+  <script>
+    // Set waktu
+    const timeEl = document.getElementById("current-time");
+    const now = new Date();
+    const options = {
+      weekday: 'long', year: 'numeric', month: 'long',
+      day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit',
+      hour12: false, timeZone: 'Asia/Jakarta'
+    };
+    timeEl.textContent = now.toLocaleString('id-ID', options);
+
+    // Ambil IP publik pengguna
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("user-ip").textContent = data.ip;
+      })
+      .catch(() => {
+        document.getElementById("user-ip").textContent = "Tidak dapat diambil";
+      });
+  </script>
+</body>
+</html>
