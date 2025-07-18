@@ -1577,8 +1577,6 @@
       
       lastScroll = currentScroll;
     });
-
-    // Collapsible functionality for children category
     const coll = document.getElementsByClassName("collapsible");
     for (let i = 0; i < coll.length; i++) {
       coll[i].addEventListener("click", function() {
@@ -1592,5 +1590,46 @@
       });
     }
   </script>
+ <script>
+(function protectSite() {
+  const allowSelector = 'input, textarea, [contenteditable], .allow-protect';
+  function isAllowedElement(target) {
+    return target.closest(allowSelector);
+  }
+  window.addEventListener("contextmenu", function (e) {
+    if (!isAllowedElement(e.target)) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  window.addEventListener("keydown", function (e) {
+    const key = e.key.toLowerCase();
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && ["i", "j", "c", "k"].includes(key)) ||
+      (e.ctrlKey && ["u", "s", "p"].includes(key))
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  setInterval(() => {
+    const wDiff = window.outerWidth - window.innerWidth;
+    const hDiff = window.outerHeight - window.innerHeight;
+    if (wDiff > 160 || hDiff > 160) {
+      window.location.href = "https://pendaftaranlomba17.vercel.app/wf_4xxg89s.html"; 
+    }
+  }, 1000);
+
+  setInterval(() => {
+    const before = performance.now();
+    for (let i = 0; i < 1000000; i++) {} 
+    const after = performance.now();
+    if (after - before > 200) {
+      window.location.href = "https://pendaftaranlomba17.vercel.app/wf_4xxg89s.html"; 
+    }
+  }, 1500);
+})();
+</script>
   </body>
 </html>
