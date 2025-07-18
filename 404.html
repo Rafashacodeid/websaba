@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Halaman tidak ditemukan - 404 Error"
+    />
+    <meta
+      name="keywords"
+      content="404, halaman tidak ditemukan, error"
+    />
+    <meta name="author" content="Panitia 17 Agustus Graha Saba" />
+    <link
+      rel="shortcut icon"
+      href="https://png.pngtree.com/png-vector/20240730/ourmid/pngtree-official-logo-for-indonesias-80th-independence-day-2024-vector-png-image_13263920.png"
+      type="image/x-icon"
+    />
+    <title>404 - Halaman Tidak Ditemukan</title>
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+      as="script"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    :root {
+      --primary-color: #dc2626;
+      --primary-dark: #b91c1c;
+      --primary-light: #fecaca;
+      --secondary-color: #1e40af;
+      --accent-color: #f59e0b;
+      --dark-color: #1f2937;
+      --light-color: #f9fafb;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-color), var(--light-color), var(--primary-color), var(--primary-dark));
+      color: var(--dark-color);
+      position: relative;
+      min-height: 100vh;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+    
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), 
+                  url('https://source.unsplash.com/random/1920x1080/?indonesia,flag,independence') no-repeat center center/cover;
+      position: relative;
+      color: white;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .btn-primary {
+      background: var(--primary-color);
+      border: none;
+      border-radius: 12px;
+      padding: 0.85rem 2rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      letter-spacing: 0.5px;
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(220, 38, 38, 0.3);
+    }
+    
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+    
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      max-width: 90%;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+      box-sizing: border-box;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    @media (max-width: 640px) {
+      .hero-section h1 { font-size: 2.5rem; }
+      .hero-section p { font-size: 1.1rem; }
+    }
+    
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .hero-section h1 { font-size: 3.5rem; }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .text-stroke {
+      -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+      text-stroke: 1px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+  <body>
+    <div id="particles-js"></div>
+    <section class="hero-section text-center relative" role="banner">
+      <div class="hero-content container mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-stroke"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          404 - Halaman Tidak Ditemukan
+        </h1>
+        <p
+          class="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Maaf, halaman yang Anda cari tidak dapat ditemukan. Silakan kembali ke beranda atau hubungi kami untuk bantuan lebih lanjut.
+        </p>
+        <div
+          class="btn-group"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <a
+            href="https://pendaftaranlomba17.vercel.app/"
+            class="btn-primary text-lg font-semibold hover-scale"
+          >
+            Kembali ke Beranda
+          </a>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-out-quad',
+        offset: 120
+      });
+      particlesJS('particles-js', {
+        particles: {
+          number: { 
+            value: 80, 
+            density: { 
+              enable: true, 
+              value_area: 800 
+            } 
+          },
+          color: { 
+            value: ['#dc2626', '#ffffff', '#b91c1c'] 
+          },
+          shape: { 
+            type: 'circle', 
+            stroke: { 
+              width: 0 
+            } 
+          },
+          opacity: { 
+            value: 0.6, 
+            random: true 
+          },
+          size: { 
+            value: 4, 
+            random: true 
+          },
+          line_linked: { 
+            enable: true, 
+            distance: 150, 
+            color: '#ffffff', 
+            opacity: 0.3, 
+            width: 1.5 
+          },
+          move: { 
+            enable: true, 
+            speed: 4, 
+            direction: 'none', 
+            random: true, 
+            straight: false, 
+            out_mode: 'out', 
+            bounce: false 
+          }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: { 
+            onhover: { 
+              enable: true, 
+              mode: 'grab' 
+            }, 
+            onclick: { 
+              enable: true, 
+              mode: 'push' 
+            }, 
+            resize: true 
+          },
+          modes: { 
+            grab: { 
+              distance: 140, 
+              line_linked: { 
+                opacity: 0.7 
+              } 
+            }, 
+            push: { 
+              particles_nb: 4 
+            } 
+          }
+        },
+        retina_detect: true
+      });
+    </script>
+  </body>
+</html>
