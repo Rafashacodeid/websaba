@@ -126,8 +126,6 @@
       hour12: false, timeZone: 'Asia/Jakarta'
     };
     timeEl.textContent = now.toLocaleString('id-ID', options);
-
-    // Ambil IP publik pengguna
     fetch("https://api.ipify.org?format=json")
       .then(res => res.json())
       .then(data => {
@@ -136,6 +134,12 @@
       .catch(() => {
         document.getElementById("user-ip").textContent = "Tidak dapat diambil";
       });
+      // Di index.js
+if (location.pathname.endsWith(".html")) {
+  let clean = location.pathname.replace(/\.html$/, "");
+  location.replace(clean);
+}
+
   </script>
 </body>
 </html>
