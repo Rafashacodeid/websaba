@@ -621,7 +621,7 @@
               >Daftar Sekarang</a
             >
             <a
-              href="https://pendaftaranlomba17.vercel.app/assets/page/peserta.date.dev.html"
+              href="https://pendaftaranlomba17.vercel.app/assets/page/peserta.html"
               class="btn-primary text-lg font-semibold bg-gray-800 hover:bg-gray-900 hover-scale"
               rel="noopener noreferrer"
               >Lihat Peserta</a
@@ -1392,7 +1392,7 @@
           <a href="#sejarah" class="block text-gray-300 hover:text-yellow-300 transition">Sejarah</a>
           <a href="#kategori" class="block text-gray-300 hover:text-yellow-300 transition">Kategori</a>
           <a href="#pendaftaran" class="block text-gray-300 hover:text-yellow-300 transition">Pendaftaran</a>
-          <a href="https://pendaftaranlomba17.vercel.app/assets/page/peserta.date.dev.html" target="_blank" rel="noopener noreferrer" class="block text-gray-300 hover:text-yellow-300 transition">Peserta</a>
+          <a href="https://pendaftaranlomba17.vercel.app/assets/page/peserta.html" target="_blank" rel="noopener noreferrer" class="block text-gray-300 hover:text-yellow-300 transition">Peserta</a>
         </nav>
       </div>
 
@@ -1782,19 +1782,18 @@
       });
     }
   </script>
-<script>
+ <script>
 (function protectSite() {
   const allowSelector = 'input, textarea, [contenteditable], .allow-protect';
-
   function isAllowedElement(target) {
     return target.closest(allowSelector);
   }
-  const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
   window.addEventListener("contextmenu", function (e) {
     if (!isAllowedElement(e.target)) {
       e.preventDefault();
     }
   }, { passive: false });
+
   window.addEventListener("keydown", function (e) {
     const key = e.key.toLowerCase();
     if (
@@ -1805,25 +1804,23 @@
       e.preventDefault();
     }
   });
-  if (!isiOS) {
-    setInterval(() => {
-      const wDiff = window.outerWidth - window.innerWidth;
-      const hDiff = window.outerHeight - window.innerHeight;
-      if (wDiff > 160 || hDiff > 160) {
-        window.location.href = "https://pendaftaranlomba17.vercel.app/wf_4xxg89s.html";
-      }
-    }, 1500);
-    // Anti-debug 
-    setInterval(() => {
-      const start = performance.now();
-      for (let i = 0; i < 500000; i++) {} 
-      const end = performance.now();
-      if (end - start > 200) {
-        window.location.href = "https://pendaftaranlomba17.vercel.app/wf_4xxg89s.html";
-      }
-    }, 2000);
-  }
 
+  setInterval(() => {
+    const wDiff = window.outerWidth - window.innerWidth;
+    const hDiff = window.outerHeight - window.innerHeight;
+    if (wDiff > 160 || hDiff > 160) {
+      window.location.href = "https://pendaftaranlomba17.vercel.app/wf_4xxg89s.html"; 
+    }
+  }, 1000);
+
+  setInterval(() => {
+    const before = performance.now();
+    for (let i = 0; i < 1000000; i++) {} 
+    const after = performance.now();
+    if (after - before > 200) {
+      window.location.href = "https://pendaftaranlomba17.vercel.app/wf_4xxg89s.html"; 
+    }
+  }, 1500);
 })();
 </script>
   </body>
