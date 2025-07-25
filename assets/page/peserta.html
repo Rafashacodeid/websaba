@@ -360,12 +360,6 @@
   </style>
 </head>
 <body>
-  <img
-    src="/assets/img/dirgahayu.jpg"
-    alt="Dirgahayu Republik Indonesia 80 Tahun - Graha Saba"
-    class="w-full h-auto max-h-32 sm:max-h-40 md:max-h-48 object-cover transition-all duration-300"
-    data-aos="fade-down"
-  />
   <div id="particles-js"></div>
   
   <header data-aos="fade-up">
@@ -417,8 +411,7 @@
               </tr>
             </thead>
             <tbody id="participantTable">
-              <!-- Data will be inserted here by JavaScript -->
-            </tbody>
+              </tbody>
           </table>
         </div>
       </div>
@@ -432,7 +425,7 @@
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
         </svg>
         <h3 class="text-2xl font-bold text-gray-800 mb-2">Data Diperbarui!</h3>
-        <p class="text-gray-600 mb-6">Daftar peserta telah diperbarui. Mohon menunggu jika nama Anda belum tercantum, karena proses ini dilakukan secara manual oleh panitia.</p>
+        <p class="text-gray-600 mb-6">Daftar peserta telah diperbarui.</p>
         <button id="closeModal" class="btn-primary px-6 py-2">Tutup</button>
       </div>
     </div>
@@ -452,7 +445,6 @@
       </p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center sm:text-left">
-      <!-- Navigasi -->
       <div>
         <h3 class="text-lg md:text-xl font-bold text-yellow-400 mb-4 border-b border-yellow-300 pb-2">Navigasi</h3>
         <nav class="space-y-2">
@@ -565,17 +557,10 @@
       retina_detect: true
     });
     
-    const participants = [
-      { id: 1, nama: 'Dian Passage', blokno: 'A1 No10', nohp: '081911994353', kategori: 'Bapak-bapak', lomba: 'Remi, Estafet sarung' },
-      { id: 2, nama: 'Hermadi', blokno: 'A2 No5', nohp: '087880473444', kategori: 'Bapak-bapak', lomba: 'Estafet sarung' },
-      { id: 3, nama: 'Usmanto', blokno: 'B1 No2', nohp: '082123343105', kategori: 'Bapak-bapak', lomba: 'Remi, Gaple' },
-      { id: 4, nama: 'Agus Ponco', blokno: 'A1 No7', nohp: '089681772211', kategori: 'Bapak-bapak', lomba: 'Remi, Gaple' },
-      { id: 5, nama: 'Fenno Steginga', blokno: 'D1 No4', nohp: '081574999975', kategori: 'Bapak-bapak', lomba: 'Remi, Gaple' },
-      { id: 6, nama: 'Herawan', blokno: 'D2 No2', nohp: '085826267397', kategori: 'Bapak-bapak', lomba: 'Gaple' },
-      { id: 7, nama: 'Iwan J', blokno: 'A1 No8', nohp: '088298291857', kategori: 'Bapak-bapak', lomba: 'Gaple' },
-      { id: 8, nama: 'Ferry J', blokno: 'B2 No5', nohp: '081298491015', kategori: 'Bapak-bapak', lomba: 'Gaple' },
-    ];
+    const BASE_API_URL = 'https://backend-api-six-eosin.vercel.app/'; 
     
+    let allParticipantsData = [];
+
     function getCategoryClass(category) {
       switch(category) {
         case 'Bapak-bapak': return 'category-bapak';
@@ -589,7 +574,8 @@
     function formatCompetitions(competitions) {
       if (!competitions) return '-';
       
-      const competitionArray = competitions.split(',').map(item => item.trim());
+      const competitionArray = Array.isArray(competitions) ? competitions : competitions.split(',').map(item => item.trim());
+      
       return `
         <div class="competition-list">
           ${competitionArray.map(comp => `<span class="competition-item">${comp}</span>`).join('')}
@@ -597,6 +583,22 @@
       `;
     }
     
+    async function fetchParticipantsData() {
+        try {
+            const response = await fetch(`${BASE_API_URL}participants`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            allParticipantsData = await response.json();
+            console.log('Data fetched from API:', allParticipantsData);
+            filterData();
+        } catch (error) {
+            console.error('Error fetching participants data:', error);
+            const tbody = document.getElementById('participantTable');
+            tbody.innerHTML = `<tr><td colspan="6" class="px-4 py-3 text-center text-red-500">Gagal memuat data. Mohon coba refresh.</td></tr>`;
+        }
+    }
+
     // Render table function
     function renderTable(data) {
       const tbody = document.getElementById('participantTable');
@@ -620,8 +622,7 @@
         row.innerHTML = `
           <td class="px-4 py-3">${index + 1}</td>
           <td class="px-4 py-3 font-medium">${item.nama}</td>
-          <td class="px-4 py-3">${item.blokno || '-'}</td>
-          <td class="px-4 py-3">${item.nohp}</td>
+          <td class="px-4 py-3">${item.blok_rumah || '-'}</td> <td class="px-4 py-3">${item.nohp}</td>
           <td class="px-4 py-3"><span class="category-label ${categoryClass}">${item.kategori}</span></td>
           <td class="px-4 py-3">${formatCompetitions(item.lomba)}</td>
         `;
@@ -633,7 +634,7 @@
       const searchTerm = searchInput.value.toLowerCase();
       const category = categoryFilter.value;
       
-      let filtered = participants.filter(item => {
+      let filtered = allParticipantsData.filter(item => {
         const matchesSearch = item.nama.toLowerCase().includes(searchTerm);
         const matchesCategory = category === 'all' || item.kategori === category;
         return matchesSearch && matchesCategory;
@@ -653,7 +654,7 @@
     categoryFilter.addEventListener('change', filterData);
     
     refreshBtn.addEventListener('click', () => {
-      renderTable(participants);
+      fetchParticipantsData();
       searchInput.value = '';
       categoryFilter.value = 'all';
       
@@ -670,7 +671,7 @@
       }
     });
     
-    renderTable(participants);
+    fetchParticipantsData();
     
     // Header animation
     gsap.from('header h1', {
