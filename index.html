@@ -1785,9 +1785,11 @@
  <script>
 (function protectSite() {
   const allowSelector = 'input, textarea, [contenteditable], .allow-protect';
+
   function isAllowedElement(target) {
     return target.closest(allowSelector);
   }
+
   window.addEventListener("contextmenu", function (e) {
     if (!isAllowedElement(e.target)) {
       e.preventDefault();
@@ -1804,23 +1806,27 @@
       e.preventDefault();
     }
   });
+  let devtoolsOpened = false;
+  const threshold = 160;
 
-  setInterval(() => {
-    const wDiff = window.outerWidth - window.innerWidth;
-    const hDiff = window.outerHeight - window.innerHeight;
-    if (wDiff > 160 || hDiff > 160) {
-      window.location.href = "https://pendaftaranlomba17.vercel.app/wf_4xxg89s.html"; 
+  function detectDevTools() {
+    const widthDiff = window.outerWidth - window.innerWidth;
+    const heightDiff = window.outerHeight - window.innerHeight;
+    if (widthDiff > threshold || heightDiff > threshold) {
+      if (!devtoolsOpened) {
+        devtoolsOpened = true;
+        window.location.href = "/wf_4xxg89s.html";
+      }
+    } else {
+      devtoolsOpened = false;
     }
-  }, 1000);
+  }
 
-  setInterval(() => {
-    const before = performance.now();
-    for (let i = 0; i < 1000000; i++) {} 
-    const after = performance.now();
-    if (after - before > 200) {
-      window.location.href = "https://pendaftaranlomba17.vercel.app/wf_4xxg89s.html"; 
-    }
-  }, 1500);
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  if (!isIOS) {
+    setInterval(detectDevTools, 1500);
+  }
+
 })();
 </script>
   </body>
