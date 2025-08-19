@@ -1,198 +1,75 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Website Tidak Dapat Digunakan</title>
-  <meta name="description" content="Halaman pemberitahuan jika website sedang tidak dapat digunakan atau sudah dihentikan." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akses Tidak Dapat Ditemukan</title>
   <style>
-    :root{
-      --tosca:#16c2b0;
-      --tosca-dark:#0fa596;
-      --bg:#0b0f14;
-      --card:#0f141b;
-      --text:#e9eef5;
-      --muted:#9fb0c3;
-      --danger:#ff6b6b;
-      --success:#20c997;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-      --radius:22px;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Roboto, Arial, sans-serif;
+      background: #fff;
+      color: #202124;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;
-      background: radial-gradient(1200px 800px at 20% 10%, rgba(22,194,176,.15), transparent 60%),
-                  radial-gradient(1000px 700px at 80% 90%, rgba(22,194,176,.08), transparent 60%),
-                  var(--bg);
-      color:var(--text);
-      font-family:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";
+    .container {
+      text-align: center;
+      max-width: 480px;
+      padding: 20px;
     }
-    .wrap{width:min(980px,92vw);}
-    .hero{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:stretch;
+    .logo {
+      margin-bottom: 20px;
     }
-    .panel{background:var(--card);border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow);border-radius:var(--radius);}
-    .left{padding:40px;position:relative;overflow:hidden}
-    .badge{
-      display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;
-      background:rgba(22,194,176,.12);border:1px solid rgba(22,194,176,.35);color:var(--text);
-      font-weight:600;font-size:.9rem;letter-spacing:.2px
+    .logo img {
+      width: 92px;
     }
-    .pulse{width:8px;height:8px;border-radius:50%;background:var(--tosca);position:relative}
-    .pulse::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--tosca);opacity:.6;animation:pulse 1.6s ease-out infinite}
-    @keyframes pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.8);opacity:0}}
-    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:16px 0 10px;font-weight:800}
-    .lead{font-size:clamp(14px,2.2vw,17px);color:var(--muted);max-width:62ch}
-    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-    .btn{appearance:none;border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:700;letter-spacing:.2px;transition:.2s transform,.2s opacity,.2s filter}
-    .btn:active{transform:translateY(1px)}
-    .btn-primary{background:linear-gradient(135deg,var(--tosca),var(--tosca-dark));color:#001311}
-    .btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.12)}
-    .btn-link{background:transparent;color:var(--muted);text-decoration:underline}
-    .right{padding:24px}
-    .card{background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.12);border-radius:18px;padding:18px}
-    .grid{display:grid;gap:14px}
-    .row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.03)}
-    .k{color:var(--muted)}
-    .v{font-weight:700}
-    .status{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;font-weight:700}
-    .status.bad{background:rgba(255,107,107,.15);border:1px solid rgba(255,107,107,.35);color:#ffb0b0}
-    .status.good{background:rgba(32,201,151,.15);border:1px solid rgba(32,201,151,.35);color:#9af3ce}
-    .mini{font-size:.92rem;color:var(--muted)}
-    .alt-links{display:grid;gap:10px;margin-top:12px}
-    .alt-links a{display:flex;align-items:center;justify-content:center;border-radius:12px;padding:12px 14px;border:1px solid rgba(255,255,255,.12);text-decoration:none;color:var(--text)}
-    .alt-links a:hover{filter:brightness(1.1)}
-    .footer{margin-top:28px;text-align:center;color:var(--muted);font-size:.9rem}
-    .brand{position:absolute;right:-40px;bottom:-40px;width:260px;height:260px;opacity:.08;background:radial-gradient(closest-side, var(--tosca), transparent 70%);filter:blur(10px)}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.right{order:-1}}
+    h1 {
+      font-size: 20px;
+      margin: 15px 0;
+      font-weight: 500;
+      color: #d93025;
+    }
+    p {
+      font-size: 14px;
+      color: #5f6368;
+      line-height: 1.6;
+      margin: 0 0 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      font-size: 14px;
+      border-radius: 4px;
+      text-decoration: none;
+      margin: 5px;
+      border: 1px solid #dadce0;
+      color: #1a73e8;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #f8f9fa;
+    }
+    .footer {
+      font-size: 12px;
+      color: #70757a;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="hero">
-      <div class="panel left">
-        <span class="badge"><span class="pulse"></span> Layanan Tidak Tersedia</span>
-        <h1>Web ini sudah tidak bisa digunakan</h1>
-        <p class="lead">Maaf ya, layanan sedang dihentikan atau mengalami gangguan berat. Kalau butuh akses data atau punya kerjaan yang tertunda, pilih opsi di bawah ini biar tetap jalan.</p>
-        <div class="actions">
-          <button class="btn btn-primary" id="btn-retry">Coba Lagi</button>
-          <button class="btn btn-ghost" id="btn-status">Cek Status</button>
-          <a class="btn btn-link" id="btn-email" href="mailto:help@contoh.com?subject=Bantuan%20Akses%20Website">Hubungi Admin</a>
-        </div>
-        <div class="footer">Kode ini bisa lu tempel langsung di hosting. Ubah email/tautan sesuai kebutuhan.</div>
-        <div class="brand"></div>
-      </div>
-      <div class="panel right">
-        <div class="card">
-          <div class="row">
-            <span class="k">Status Saat Ini</span>
-            <span class="v status bad" id="status-pill">Tidak Tersedia</span>
-          </div>
-          <div class="grid" style="margin-top:8px">
-            <div class="row"><span class="k">Terakhir dicek</span><span class="v" id="last-check">-</span></div>
-            <div class="row"><span class="k">Kode alasan</span><span class="v" id="reason">SERVICE_DISABLED</span></div>
-            <div class="row"><span class="k">Koneksi kamu</span><span class="v" id="net">Mengecek...</span></div>
-          </div>
-        </div>
-        <div class="card" style="margin-top:14px">
-          <div class="mini">Alternatif akses</div>
-          <div class="alt-links">
-            <a href="#" id="mirror1">Mirror 1</a>
-            <a href="#" id="mirror2">Mirror 2</a>
-            <a href="https://statuspage.example.com" target="_blank" rel="noopener" id="statuspage">Status Page</a>
-          </div>
-        </div>
-        <div class="card" style="margin-top:14px">
-          <div class="mini">Ekspor pesan pemberitahuan</div>
-          <div class="actions" style="margin-top:10px">
-            <button class="btn btn-ghost" id="btn-copy">Salin Pesan</button>
-            <button class="btn btn-ghost" id="btn-share">Share</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script>
-    const statusPill=document.getElementById('status-pill')
-    const lastCheck=document.getElementById('last-check')
-    const reason=document.getElementById('reason')
-    const net=document.getElementById('net')
-    const btnRetry=document.getElementById('btn-retry')
-    const btnStatus=document.getElementById('btn-status')
-    const btnCopy=document.getElementById('btn-copy')
-    const btnShare=document.getElementById('btn-share')
-    const message=()=>'Halo, saat ini layanan sedang tidak dapat digunakan. Silakan cek nanti lagi atau hubungi admin di help@contoh.com. Terima kasih.'
-
-    function setStatus(ok){
-      statusPill.textContent=ok?'Tersedia':'Tidak Tersedia'
-      statusPill.className='v status '+(ok?'good':'bad')
-    }
-
-    function fmt(d){
-      return new Intl.DateTimeFormat('id-ID',{dateStyle:'long',timeStyle:'short'}).format(d)
-    }
-
-    function checkNetwork(){
-      if(!navigator.onLine){
-        net.textContent='Offline'
-        return false
-      } else {
-        net.textContent='Online'
-        return true
-      }
-    }
-
-    async function probe(){
-      const okNet=checkNetwork()
-      const start=Date.now()
-      try{
-        const r=await fetch('/health?ts='+start,{method:'GET',cache:'no-store'})
-        const ok=r.ok
-        setStatus(ok)
-        reason.textContent=ok?('HTTP '+r.status):'SERVICE_DISABLED'
-      }catch(e){
-        setStatus(false)
-        reason.textContent='NETWORK_OR_SERVICE_ERROR'
-      }finally{
-        lastCheck.textContent=fmt(new Date())
-      }
-    }
-
-    btnRetry.addEventListener('click',()=>{
-      location.reload()
-    })
-
-    btnStatus.addEventListener('click',()=>{
-      probe()
-    })
-
-    btnCopy.addEventListener('click',async()=>{
-      try{await navigator.clipboard.writeText(message());btnCopy.textContent='Tersalin'}catch(e){btnCopy.textContent='Gagal'}
-      setTimeout(()=>btnCopy.textContent='Salin Pesan',1200)
-    })
-
-    btnShare.addEventListener('click',async()=>{
-      const text=message()
-      if(navigator.share){
-        try{await navigator.share({text})}catch{}
-      } else {
-        alert(text)
-      }
-    })
-
-    window.addEventListener('online',checkNetwork)
-    window.addEventListener('offline',checkNetwork)
-
-    document.addEventListener('DOMContentLoaded',()=>{
-      checkNetwork()
-      setStatus(false)
-      lastCheck.textContent='Belum dicek'
-    })
-  </script>
+  <div class="container">
+    <div class="logo">
+      <img src="https://www.googlewatchblog.de/wp-content/uploads/google-security-logo.jpg" alt="Google">
+    </div>
+    <h1>Akses ke situs ini dibatasi</h1>
+    <p>Permintaan Anda tidak dapat diproses karena situs ini diblokir atau tidak tersedia untuk sementara. Silakan coba lagi nanti, atau hubungi administrator jika menurut Anda ini adalah kesalahan.</p>
+    <a href="javascript:location.reload()" class="btn">Muat Ulang</a>
+    <a href="mailto:help@contoh.com" class="btn">Hubungi Admin</a>
+    <div class="footer">Kode Kesalahan: ERR_BLOCKED_BY_ADMIN</div>
+  </div>
 </body>
 </html>
